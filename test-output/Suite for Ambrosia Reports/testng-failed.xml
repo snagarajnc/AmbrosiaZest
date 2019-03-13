@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="2" name="Failed suite [Suite for Ambrosia Reports]" parallel="tests">
+  <parameter name="browser" value="ie"/>
+  <test name="Test for Ambrosia Reports in IE(failed)" parallel="tests">
+    <parameter name="browser" value="ie"/>
+    <classes>
+      <class name="AbrosiaReports.Zest.ReportNavigation">
+        <methods>
+          <include name="BrowserSelection" invocation-numbers="0"/>
+          <include name="afterTest"/>
+          <include name="afterTest"/>
+          <include name="afterTest"/>
+          <include name="InitializeBrowser"/>
+          <include name="InitializeBrowser"/>
+          <include name="InitializeBrowser"/>
+        </methods>
+      </class> <!-- AbrosiaReports.Zest.ReportNavigation -->
+    </classes>
+  </test> <!-- Test for Ambrosia Reports in IE(failed) -->
+</suite> <!-- Failed suite [Suite for Ambrosia Reports] -->

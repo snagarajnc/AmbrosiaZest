@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite for Ambrosia Reports" duration-ms="9391" started-at="2019-03-13T13:29:04Z" finished-at="2019-03-13T13:29:14Z">
+    <groups>
+    </groups>
+    <test name="Test for Ambrosia Reports in Chrome" duration-ms="9391" started-at="2019-03-13T13:29:04Z" finished-at="2019-03-13T13:29:14Z">
+      <class name="AbrosiaReports.Zest.ReportNavigation">
+        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="BrowserSelection" is-config="true" duration-ms="3160" started-at="2019-03-13T18:59:04Z" finished-at="2019-03-13T18:59:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserSelection -->
+        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="AmbrosiaLogin" duration-ms="5432" started-at="2019-03-13T18:59:07Z" finished-at="2019-03-13T18:59:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AmbrosiaLogin -->
+        <test-method status="PASS" signature="LoginValidation2()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="LoginValidation2" duration-ms="787" started-at="2019-03-13T18:59:13Z" finished-at="2019-03-13T18:59:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginValidation2 -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-03-13T18:59:14Z" finished-at="2019-03-13T18:59:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- AbrosiaReports.Zest.ReportNavigation -->
+    </test> <!-- Test for Ambrosia Reports in Chrome -->
+  </suite> <!-- Suite for Ambrosia Reports -->
+</testng-results>
