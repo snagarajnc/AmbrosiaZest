@@ -16,6 +16,10 @@ import org.testng.annotations.Test;
 
 public class ReportNavigation extends POMRepo {
 
+	public static List<WebElement> allRows;
+	public static int ReportCount;
+	public static WebElement Reports;
+
 	@Parameters("browser")
 	@BeforeTest
 	public void BrowserSelection(String browser) throws AWTException, IOException {
@@ -57,37 +61,72 @@ public class ReportNavigation extends POMRepo {
 	public static void LoginValidation() {
 		String ErrorMsg = dr.getPageSource();
 		if (ErrorMsg.contains("PASSWORD")) {
-			System.out.println("Your credential is wrong. Test again with valid credential !!!");
+			POMFunction.Error("Your credential is wrong. Test again with valid credential !!!");
 			dr.quit();
 		} else {
-			System.out.println("Your credential is working !!!");
+			POMFunction.Pass("Your credential is working !!!");
 		}
 	}
 
-
-	@Test (priority = 4)
+	@Test(enabled = false)
 	public static void GrabbedAllTableData() throws InterruptedException {
 		Thread.sleep(8000);
 		dr.findElement(By.partialLinkText("REPORTS")).click();
 		Thread.sleep(5000);
 		// Frame
 		int Size = dr.findElements(ReportiFrame).size();
-		System.out.println("iFRAME Size : " + Size);
+		POMFunction.Info("iFRAME Size : " + Size);
 		dr.switchTo().frame(0);
 		// dr.findElement(IVRReport).click();
 
 		WebElement TableBody1 = dr.findElement(TableBody);
 		WebElement CompleteTable = TableBody1.findElement(Complete);
 		// Row
-		List<WebElement> allRows = CompleteTable.findElements(TableRow);
-		System.out.println("-------------------- Complete Table Data --------------------");
+		allRows = CompleteTable.findElements(TableRow);
+		POMFunction.Info("-------------------- Complete Table Data --------------------");
 		for (WebElement Lwb1 : allRows) {
 			List<WebElement> cells = Lwb1.findElements(TableColumn);
 			for (WebElement Lwb2 : cells) {
-				System.out.println(Lwb2.getText());
-				
+				POMFunction.Info(Lwb2.getText());
 			}
 		}
+	}
+
+	@Test(priority = 4)
+	public static WebElement GrabbedOnlyReports() throws InterruptedException {
+		Thread.sleep(8000);
+		dr.findElement(ReportLink).click();
+		Thread.sleep(5000);
+		// Frame
+		int Size = dr.findElements(ReportiFrame).size();
+		POMFunction.Info("iFRAME Size : " + Size);
+		dr.switchTo().frame(0);
+		WebElement TableBody1 = dr.findElement(TableBody);
+		WebElement CompleteTable = TableBody1.findElement(Complete);
+		List<WebElement> allRows = CompleteTable.findElements(TableRow);
+		ReportCount = allRows.size();
+		POMFunction.Info("RowCounts : " + ReportCount);
+		POMFunction.Info("--------------------- REPORTS ---------------------");
+		for (i = 0; i < ReportCount; i++) {
+			incr = i + 1;
+			Reports = dr.findElement(By.id("reportLink_Row" + incr));
+			ReportNames = Reports.getText();
+			POMFunction.Info(ReportNames);
+		}
+		POMFunction.Info("--------------------- EOR ---------------------");
+		return Reports;
+	}
+
+	@Parameters("ReportName")
+	@Test(priority = 5)
+	public static void OpenSelectedReport (String ReportName) throws InterruptedException {
+		if(ReportName.equalsIgnoreCase("Interactive Voice Response Report")) {
+			GrabbedOnlyReports().click();
+		}
+		else if(ReportName.equalsIgnoreCase("Music on Hold Report")) {
+			
+		}
+
 	}
 
 	@AfterTest

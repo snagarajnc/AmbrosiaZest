@@ -53,7 +53,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite_for_Ambrosia_Reports">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -106,12 +106,27 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite_for_Ambrosia_Reports" title="AbrosiaReports.Zest.ReportNavigation" hash-for-method="GrabbedAllTableData">GrabbedAllTableData</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite_for_Ambrosia_Reports" title="AbrosiaReports.Zest.ReportNavigation" hash-for-method="AmbrosiaLogin">AmbrosiaLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite_for_Ambrosia_Reports" title="AbrosiaReports.Zest.ReportNavigation" hash-for-method="LoginValidation">LoginValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite_for_Ambrosia_Reports" title="AbrosiaReports.Zest.ReportNavigation" hash-for-method="LoginValidation">LoginValidation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite_for_Ambrosia_Reports" title="AbrosiaReports.Zest.ReportNavigation" hash-for-method="OpenSelectedReport(Interactive Voice Response Report)">OpenSelectedReport(Interactive Voice Response Report)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite_for_Ambrosia_Reports" title="AbrosiaReports.Zest.ReportNavigation" hash-for-method="OpenSelectedReport(Music on Hold Report)">OpenSelectedReport(Music on Hold Report)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite_for_Ambrosia_Reports -->
@@ -141,9 +156,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="GrabbedAllTableData">
-                  </a> <!-- GrabbedAllTableData -->
-                  <span class="method-name">GrabbedAllTableData</span>
+                  <a name="AmbrosiaLogin">
+                  </a> <!-- AmbrosiaLogin -->
+                  <span class="method-name">AmbrosiaLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -151,6 +166,29 @@
                   <a name="LoginValidation">
                   </a> <!-- LoginValidation -->
                   <span class="method-name">LoginValidation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LoginValidation">
+                  </a> <!-- LoginValidation -->
+                  <span class="method-name">LoginValidation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="OpenSelectedReport(Interactive Voice Response Report)">
+                  </a> <!-- OpenSelectedReport(Interactive Voice Response Report) -->
+                  <span class="method-name">OpenSelectedReport</span>
+                  <span class="parameters">(Interactive Voice Response Report)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="OpenSelectedReport(Music on Hold Report)">
+                  </a> <!-- OpenSelectedReport(Music on Hold Report) -->
+                  <span class="method-name">OpenSelectedReport</span>
+                  <span class="parameters">(Music on Hold Report)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -166,11 +204,19 @@
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite verbose=&quot;2&quot; name=&quot;Suite for Ambrosia Reports&quot;&gt;
   &lt;test name=&quot;Test for Ambrosia Reports in Chrome&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;gecko&quot;/&gt;
+    &lt;parameter name=&quot;ReportName&quot; value=&quot;Interactive Voice Response Report&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;AbrosiaReports.Zest.ReportNavigation&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test for Ambrosia Reports in Chrome --&gt;
+  &lt;test name=&quot;Test for Ambrosia Reports in Gecko&quot;&gt;
+    &lt;parameter name=&quot;ReportName&quot; value=&quot;Music on Hold Report&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;gecko&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;AbrosiaReports.Zest.ReportNavigation&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test for Ambrosia Reports in Gecko --&gt;
 &lt;/suite&gt; &lt;!-- Suite for Ambrosia Reports --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -183,6 +229,9 @@
             <ul>
               <li>
                 <span class="test-name">Test for Ambrosia Reports in Chrome (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Test for Ambrosia Reports in Gecko (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -208,24 +257,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'GrabbedAllTableData')
+data.setCell(0, 1, 'OpenSelectedReport')
 data.setCell(0, 2, 'AbrosiaReports.Zest.ReportNavigation')
-data.setCell(0, 3, 14519);
+data.setCell(0, 3, 124091);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'AmbrosiaLogin')
 data.setCell(1, 2, 'AbrosiaReports.Zest.ReportNavigation')
-data.setCell(1, 3, 9485);
+data.setCell(1, 3, 7032);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'LoginValidation')
+data.setCell(2, 1, 'AmbrosiaLogin')
 data.setCell(2, 2, 'AbrosiaReports.Zest.ReportNavigation')
-data.setCell(2, 3, 14);
+data.setCell(2, 3, 6846);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'LoginValidation')
+data.setCell(3, 2, 'AbrosiaReports.Zest.ReportNavigation')
+data.setCell(3, 3, 57);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'LoginValidation')
+data.setCell(4, 2, 'AbrosiaReports.Zest.ReportNavigation')
+data.setCell(4, 3, 13);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'OpenSelectedReport')
+data.setCell(5, 2, 'AbrosiaReports.Zest.ReportNavigation')
+data.setCell(5, 3, 0);
 window.suiteTableData['Suite_for_Ambrosia_Reports']= { tableData: data, tableDiv: 'times-div-Suite_for_Ambrosia_Reports'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 24 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Suite_for_Ambrosia_Reports">
               </div> <!-- times-div-Suite_for_Ambrosia_Reports -->
             </div> <!-- times-div -->
@@ -240,13 +301,15 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite_for_Ambrosia_Reports" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">AbrosiaReports.Zest.ReportNavigation</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">Test</span>
+                <span class="ignored-method-name">GrabbedAllTableData</span>
+                <br/>
+                <span class="ignored-method-name">GrabbedAllTableData</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -260,24 +323,44 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">AbrosiaReports.Zest.ReportNavigation</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">BrowserSelection(gecko)</span>
+                <span class="method-name">BrowserSelection(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">AmbrosiaLogin</span>
-                <span class="method-start">3445 ms</span>
+                <span class="method-start">3072 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">LoginValidation</span>
-                <span class="method-start">12931 ms</span>
+                <span class="method-start">9920 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">GrabbedAllTableData</span>
-                <span class="method-start">12946 ms</span>
+                <span class="method-name">OpenSelectedReport(Interactive Voice Response Report)</span>
+                <span class="method-start">9979 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">27467 ms</span>
+                <span class="method-start">134073 ms</span>
+              </div> <!-- configuration-test after -->
+              <div class="configuration-test before">
+                <span class="method-name">BrowserSelection(gecko)</span>
+                <span class="method-start">134122 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">AmbrosiaLogin</span>
+                <span class="method-start">136895 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">LoginValidation</span>
+                <span class="method-start">143928 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">OpenSelectedReport(Music on Hold Report)</span>
+                <span class="method-start">143942 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">afterTest</span>
+                <span class="method-start">143943 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

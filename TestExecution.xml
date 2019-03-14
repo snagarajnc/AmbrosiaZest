@@ -3,7 +3,8 @@
 <suite name="Suite for Ambrosia Reports" parallel="false" verbose="2">
 
 	<test name="Test for Ambrosia Reports in Chrome">
-		<parameter name="browser" value="gecko" />
+		<parameter name="browser" value="chrome" />
+		<parameter name="ReportName" value="Interactive Voice Response Report" />
 		<classes>
 			<class name="AbrosiaReports.Zest.ReportNavigation" />
 		</classes>
@@ -11,6 +12,7 @@
 
 <!-- 	<test name="Test for Ambrosia Reports in Gecko">
 		<parameter name="browser" value="gecko" />
+		<parameter name="ReportName" value="Music on Hold Report" />
 		<classes>
 			<class name="AbrosiaReports.Zest.ReportNavigation" />
 		</classes>
@@ -18,6 +20,7 @@
 	
 <!-- 		<test name="Test for Ambrosia Reports in IE">
 		<parameter name="browser" value="ie" />
+		<parameter name="ReportName" value="Interactive Voice Response Report" />
 		<classes>
 			<class name="AbrosiaReports.Zest.ReportNavigation" />
 		</classes>
