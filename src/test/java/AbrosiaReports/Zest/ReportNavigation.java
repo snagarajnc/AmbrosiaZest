@@ -83,7 +83,6 @@ public class ReportNavigation extends POMRepo {
 		for (WebElement Lwb1 : allRows) {
 			List<WebElement> cells = Lwb1.findElements(TableColumn);
 			for (WebElement Lwb2 : cells) {
-
 				System.out.println(Lwb2.getText());
 			}
 		}
