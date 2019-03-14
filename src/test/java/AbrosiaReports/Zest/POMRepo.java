@@ -21,5 +21,15 @@ public class POMRepo {
 	public static By LoginPassword = By.name("password");
 	public static By LoginSubmit = By.className("dui-login-submit");
 	public static By Logo = By.className("dui-login-logo");
+	public static By Reports = By.className("dui-header-nav-item dui-active ng-star-inserted");
+	
+	public static By TableMain = By.id("div_Report");
+	public static By TableBody = By.id("rdDataTableDiv-HomeReportTable");
+	public static By TableRow = By.tagName("tr");
+	public static By TableColumn = By.tagName("td");
+	public static By ReportiFrame = By.tagName("iframe");
+	public static By Report1 = By.id("lblREPORT_NAME_Row2");
+	public static By IVRReport =By.partialLinkText("Interactive Voice Response Report");
+	
 
 }

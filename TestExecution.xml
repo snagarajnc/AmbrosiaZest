@@ -3,7 +3,7 @@
 <suite name="Suite for Ambrosia Reports" parallel="false" verbose="2">
 
 	<test name="Test for Ambrosia Reports in Chrome">
-		<parameter name="browser" value="chrome" />
+		<parameter name="browser" value="gecko" />
 		<classes>
 			<class name="AbrosiaReports.Zest.ReportNavigation" />
 		</classes>
