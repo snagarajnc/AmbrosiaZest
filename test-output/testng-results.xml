@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite for Ambrosia Reports" duration-ms="22328" started-at="2019-03-14T10:50:21Z" finished-at="2019-03-14T10:50:43Z">
+  <suite name="Suite for Ambrosia Reports" duration-ms="27471" started-at="2019-03-14T11:55:59Z" finished-at="2019-03-14T11:56:26Z">
     <groups>
     </groups>
-    <test name="Test for Ambrosia Reports in Chrome" duration-ms="22328" started-at="2019-03-14T10:50:21Z" finished-at="2019-03-14T10:50:43Z">
+    <test name="Test for Ambrosia Reports in Chrome" duration-ms="27471" started-at="2019-03-14T11:55:59Z" finished-at="2019-03-14T11:56:26Z">
       <class name="AbrosiaReports.Zest.ReportNavigation">
-        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="BrowserSelection" is-config="true" duration-ms="3437" started-at="2019-03-14T16:20:21Z" finished-at="2019-03-14T16:20:24Z">
+        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="BrowserSelection" is-config="true" duration-ms="3438" started-at="2019-03-14T17:25:59Z" finished-at="2019-03-14T17:26:02Z">
           <params>
             <param index="0">
               <value>
@@ -18,19 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="AmbrosiaLogin" duration-ms="6981" started-at="2019-03-14T16:20:24Z" finished-at="2019-03-14T16:20:31Z">
+        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="AmbrosiaLogin" duration-ms="9485" started-at="2019-03-14T17:26:02Z" finished-at="2019-03-14T17:26:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AmbrosiaLogin -->
-        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="LoginValidation" duration-ms="14" started-at="2019-03-14T16:20:31Z" finished-at="2019-03-14T16:20:31Z">
+        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="LoginValidation" duration-ms="14" started-at="2019-03-14T17:26:12Z" finished-at="2019-03-14T17:26:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginValidation -->
-        <test-method status="PASS" signature="Test()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="Test" duration-ms="11880" started-at="2019-03-14T16:20:31Z" finished-at="2019-03-14T16:20:43Z">
+        <test-method status="PASS" signature="GrabbedAllTableData()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="GrabbedAllTableData" duration-ms="14519" started-at="2019-03-14T17:26:12Z" finished-at="2019-03-14T17:26:26Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-03-14T16:20:43Z" finished-at="2019-03-14T16:20:43Z">
+        </test-method> <!-- GrabbedAllTableData -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@28feb3fa]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-03-14T17:26:26Z" finished-at="2019-03-14T17:26:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

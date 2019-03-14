@@ -64,9 +64,10 @@ public class ReportNavigation extends POMRepo {
 		}
 	}
 
-	@Test(priority = 4)
-	public static void Test() throws InterruptedException {
-		Thread.sleep(5000);
+
+	@Test (priority = 4)
+	public static void GrabbedAllTableData() throws InterruptedException {
+		Thread.sleep(8000);
 		dr.findElement(By.partialLinkText("REPORTS")).click();
 		Thread.sleep(5000);
 		// Frame
@@ -74,19 +75,18 @@ public class ReportNavigation extends POMRepo {
 		System.out.println("iFRAME Size : " + Size);
 		dr.switchTo().frame(0);
 		// dr.findElement(IVRReport).click();
-		
-		WebElement TableMain1 = dr.findElement(TableMain);
-		WebElement TableBody1 = TableMain1.findElement(TableBody);
+
+		WebElement TableBody1 = dr.findElement(TableBody);
+		WebElement CompleteTable = TableBody1.findElement(Complete);
 		// Row
-		List<WebElement> allRows = TableBody1.findElements(TableRow);
-		System.out.println("### Data ###");
+		List<WebElement> allRows = CompleteTable.findElements(TableRow);
+		System.out.println("-------------------- Complete Table Data --------------------");
 		for (WebElement Lwb1 : allRows) {
 			List<WebElement> cells = Lwb1.findElements(TableColumn);
 			for (WebElement Lwb2 : cells) {
 				System.out.println(Lwb2.getText());
 			}
 		}
-		
 	}
 
 	@AfterTest
