@@ -1,19 +1,12 @@
 package AbrosiaReports.Zest;
 
-import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ISuite;
-import org.testng.ISuiteListener;
 
 public class POMRepo extends POMFunction {
 
@@ -35,45 +28,36 @@ public class POMRepo extends POMFunction {
 	public static Random rand = new Random();
 	public static String ReportNames;
 	public static By ReportLink = By.partialLinkText("REPORTS");
-
-	// Events
-	public static By clickEvent = By.linkText("EVENTS");
-
-	public static Wait getWait() {
-		WebDriverWait exWait = new WebDriverWait(dr, 30);
-		return exWait;
-	}
-
-	public static void waitforElementVisibile(By EleName) {
-		getWait().until(ExpectedConditions.visibilityOfElementLocated(EleName));
-	}
-
-	public static void ChromeBrowser(String BrowserLocation) throws IOException {
-		System.setProperty("webdriver.chrome.driver",
-				System.getProperty("user.dir") + ObjRepo().getProperty("ChromeDriverLoc"));
-		dr = new ChromeDriver();
-	}
-
-	public static void FirefoxBrowser(String BrowserLocation) throws IOException {
-		System.setProperty("webdriver.gecko.driver",
-				System.getProperty("user.dir") + ObjRepo().getProperty("GeckoDriverLoc"));
-		dr = new FirefoxDriver();
-	}
-
-	public static void IEBrowser(String BrowserLocation) throws IOException {
-		System.setProperty("webdriver.ie.driver",
-				System.getProperty("user.dir") + ObjRepo().getProperty("IEDriverLoc"));
-		dr = new InternetExplorerDriver();
-	}
-
-	public static String GetPropValues(String Credentials) throws IOException {
-		return ObjRepo().getProperty(Credentials);
-	}
-
-	public static WebElement FindElement(By ByElementName) {
-		return dr.findElement(ByElementName);
-	}
-
+	public static DateFormat ObjD = new SimpleDateFormat("dd-M-yyyy hh:mm:ss.SSSS");
+	public static String Today = ObjD.format(new Date());
+	public static By clickEvent = By.linkText("EVENTS"); // Events
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/*--------------------------------MachineTest #1--------------------------------*/
 
 	// Question #1

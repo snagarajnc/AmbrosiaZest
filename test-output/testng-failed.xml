@@ -2,18 +2,21 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="2" name="Failed suite [Suite for Ambrosia Reports]">
   <parameter name="ReportName" value="Music on Hold Report"/>
-  <parameter name="browser" value="chrome"/>
-  <test name="Test for Ambrosia Reports in Gecko(failed)">
+  <parameter name="browser" value="gecko"/>
+  <test name="Test for Ambrosia Login with Gecko(failed)">
     <parameter name="ReportName" value="Music on Hold Report"/>
-    <parameter name="browser" value="chrome"/>
+    <parameter name="browser" value="gecko"/>
     <classes>
       <class name="AbrosiaReports.Zest.ReportNavigation">
         <methods>
-          <include name="AmbrosiaLogin"/>
           <include name="BrowserSelection"/>
-          <include name="LoginValidation"/>
         </methods>
       </class> <!-- AbrosiaReports.Zest.ReportNavigation -->
+      <class name="AmbrosiaEvents.ManipulateEvents">
+        <methods>
+          <include name="Event1"/>
+        </methods>
+      </class> <!-- AmbrosiaEvents.ManipulateEvents -->
     </classes>
-  </test> <!-- Test for Ambrosia Reports in Gecko(failed) -->
+  </test> <!-- Test for Ambrosia Login with Gecko(failed) -->
 </suite> <!-- Failed suite [Suite for Ambrosia Reports] -->

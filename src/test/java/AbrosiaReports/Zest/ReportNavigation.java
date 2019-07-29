@@ -2,11 +2,11 @@ package AbrosiaReports.Zest;
 
 import java.awt.AWTException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -19,8 +19,8 @@ public class ReportNavigation extends POMRepo {
 
 	@Parameters("browser")
 	@BeforeTest
-	public void BrowserSelection(String browser) throws AWTException, IOException {
-
+	public void BrowserSelection(String browser) throws AWTException, IOException, ParseException {
+		
 		if (browser.equalsIgnoreCase("chrome")) {
 			ChromeBrowser("ChromeDriverLoc");
 		}
@@ -32,40 +32,41 @@ public class ReportNavigation extends POMRepo {
 		else if (browser.equalsIgnoreCase("ie")) {
 			IEBrowser("IEDriverLoc");
 		}
+		TakeScreenShot();
 	}
 
 	@Test(priority = 2)
-	public static void AmbrosiaLogin() throws IOException, InterruptedException {
+	public static void AmbrosiaLogin() throws IOException, InterruptedException, ParseException {
+		TakeScreenShot();
 		dr.navigate().to(GetPropValues("URL"));
-		waitforElementVisibile(LoginUserName);
-		FindElement(LoginUserName).sendKeys(GetPropValues("UserNameCredential"));
-		FindElement(LoginPassword).sendKeys(GetPropValues("PasswordCredential"));
+		waitforElementVisibile(LoginUserName).sendKeys(GetPropValues("UserNameCredential"));
+		waitforElementVisibile(LoginPassword).sendKeys(GetPropValues("PasswordCredential"));
+		TakeScreenShot();
 		FindElement(LoginSubmit).click();
-		waitforElementVisibile(Logo);
-		FindElement(Logo).click();
+		waitforElementVisibile(Logo).click();
+		TakeScreenShot();
 	}
 
 	@Test(priority = 3)
-	public static void LoginValidation() {
+	public static void LoginValidation() throws ParseException {
 		String ErrorMsg = dr.getPageSource();
 		if (ErrorMsg.contains("PASSWORD")) {
 			POMFunction.Error("Your credential is wrong. Test again with valid credential !!!");
 			dr.quit();
 		} else {
 			POMFunction.Pass("Your credential is working !!!");
+			TakeScreenShot();
 		}
 	}
 
 	@Test(enabled = false)
 	public static void clickEvent() throws InterruptedException {
-		waitforElementVisibile(clickEvent);
-		FindElement(clickEvent).click();
+		waitforElementVisibile(clickEvent).click();
 	}
 
 	@Test(enabled = false)
 	public static void GrabbedAllTableData() throws InterruptedException {
-		waitforElementVisibile(ReportLink);
-		dr.findElement(ReportLink).click();
+		waitforElementVisibile(ReportLink).click();
 		waitforElementVisibile(ReportiFrame);
 		// Frame
 		int Size = dr.findElements(ReportiFrame).size();
