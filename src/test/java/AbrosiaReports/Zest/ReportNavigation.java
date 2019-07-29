@@ -32,7 +32,6 @@ public class ReportNavigation extends POMRepo {
 		else if (browser.equalsIgnoreCase("ie")) {
 			IEBrowser("IEDriverLoc");
 		}
-
 	}
 
 	@Test(priority = 2)
