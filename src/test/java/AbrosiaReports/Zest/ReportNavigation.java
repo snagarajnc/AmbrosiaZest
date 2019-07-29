@@ -6,10 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.AfterTest;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -24,37 +21,29 @@ public class ReportNavigation extends POMRepo {
 	@BeforeTest
 	public void BrowserSelection(String browser) throws AWTException, IOException {
 
-		// ChromeDriver
 		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + ObjRepo().getProperty("ChromeDriverLoc"));
-			dr = new ChromeDriver();
+			ChromeBrowser("ChromeDriverLoc");
 		}
 
 		else if (browser.equalsIgnoreCase("gecko")) {
-			// FirefoxDriver
-			System.setProperty("webdriver.gecko.driver",
-					System.getProperty("user.dir") + ObjRepo().getProperty("GeckoDriverLoc"));
-			dr = new FirefoxDriver();
+			FirefoxBrowser("GeckoDriverLoc");
 		}
 
 		else if (browser.equalsIgnoreCase("ie")) {
-			// Internet Explorer
-			System.setProperty("webdriver.ie.driver",
-					System.getProperty("user.dir") + ObjRepo().getProperty("IEDriverLoc"));
-			dr = new InternetExplorerDriver();
+			IEBrowser("IEDriverLoc");
 		}
+
 	}
 
 	@Test(priority = 2)
 	public static void AmbrosiaLogin() throws IOException, InterruptedException {
-		dr.get(ObjRepo().getProperty("URL"));
-		Thread.sleep(2000);
-		dr.findElement(LoginUserName).sendKeys(ObjRepo().getProperty("UserNameCredential"));
-		dr.findElement(LoginPassword).sendKeys(ObjRepo().getProperty("PasswordCredential"));
-		dr.findElement(LoginSubmit).click();
-		Thread.sleep(2000);
-		dr.findElement(Logo).click();
+		dr.navigate().to(GetPropValues("URL"));
+		waitforElementVisibile(LoginUserName);
+		FindElement(LoginUserName).sendKeys(GetPropValues("UserNameCredential"));
+		FindElement(LoginPassword).sendKeys(GetPropValues("PasswordCredential"));
+		FindElement(LoginSubmit).click();
+		waitforElementVisibile(Logo);
+		FindElement(Logo).click();
 	}
 
 	@Test(priority = 3)
@@ -69,15 +58,21 @@ public class ReportNavigation extends POMRepo {
 	}
 
 	@Test(enabled = false)
+	public static void clickEvent() throws InterruptedException {
+		waitforElementVisibile(clickEvent);
+		FindElement(clickEvent).click();
+	}
+
+	@Test(enabled = false)
 	public static void GrabbedAllTableData() throws InterruptedException {
-		Thread.sleep(8000);
-		dr.findElement(By.partialLinkText("REPORTS")).click();
-		Thread.sleep(5000);
+		waitforElementVisibile(ReportLink);
+		dr.findElement(ReportLink).click();
+		waitforElementVisibile(ReportiFrame);
 		// Frame
 		int Size = dr.findElements(ReportiFrame).size();
 		POMFunction.Info("iFRAME Size : " + Size);
 		dr.switchTo().frame(0);
-		// dr.findElement(IVRReport).click();
+		FindElement(IVRReport).click();
 
 		WebElement TableBody1 = dr.findElement(TableBody);
 		WebElement CompleteTable = TableBody1.findElement(Complete);
@@ -92,11 +87,10 @@ public class ReportNavigation extends POMRepo {
 		}
 	}
 
-	@Test(priority = 4)
+	@Test(enabled = false)
 	public static WebElement GrabbedOnlyReports() throws InterruptedException {
-		Thread.sleep(8000);
-		dr.findElement(ReportLink).click();
-		Thread.sleep(5000);
+		waitforElementVisibile(ReportLink);
+		FindElement(ReportLink).click();
 		// Frame
 		int Size = dr.findElements(ReportiFrame).size();
 		POMFunction.Info("iFRAME Size : " + Size);
@@ -118,18 +112,14 @@ public class ReportNavigation extends POMRepo {
 	}
 
 	@Parameters("ReportName")
-	@Test(priority = 5)
-	public static void OpenSelectedReport (String ReportName) throws InterruptedException {
-		if(ReportName.equalsIgnoreCase("Interactive Voice Response Report")) {
+	@Test(enabled = false)
+	public static void OpenSelectedReport(String ReportName) throws InterruptedException {
+		if (ReportName.equalsIgnoreCase("Interactive Voice Response Report")) {
 			GrabbedOnlyReports().click();
-		}
-		else if(ReportName.equalsIgnoreCase("Music on Hold Report")) {
-			
-		}
+		} else if (ReportName.equalsIgnoreCase("Music on Hold Report")) {
 
-	}
-
-	@AfterTest
-	public void afterTest() {
+		}
+		Thread.sleep(3000);
+		dr.close();
 	}
 }

@@ -1,51 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite for Ambrosia Reports" duration-ms="143946" started-at="2019-03-14T14:37:08Z" finished-at="2019-03-14T14:39:32Z">
+  <suite name="Suite for Ambrosia Reports" duration-ms="16044" started-at="2019-07-29T11:29:43Z" finished-at="2019-07-29T11:29:59Z">
     <groups>
     </groups>
-    <test name="Test for Ambrosia Reports in Chrome" duration-ms="134077" started-at="2019-03-14T14:37:08Z" finished-at="2019-03-14T14:39:22Z">
+    <test name="Test for Ambrosia Login with Gecko" duration-ms="16044" started-at="2019-07-29T11:29:43Z" finished-at="2019-07-29T11:29:59Z">
       <class name="AbrosiaReports.Zest.ReportNavigation">
-        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@4ddced80]" name="BrowserSelection" is-config="true" duration-ms="3065" started-at="2019-03-14T20:07:08Z" finished-at="2019-03-14T20:07:11Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@4ddced80]" name="AmbrosiaLogin" duration-ms="6846" started-at="2019-03-14T20:07:11Z" finished-at="2019-03-14T20:07:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AmbrosiaLogin -->
-        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@4ddced80]" name="LoginValidation" duration-ms="57" started-at="2019-03-14T20:07:18Z" finished-at="2019-03-14T20:07:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginValidation -->
-        <test-method status="PASS" signature="OpenSelectedReport(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@4ddced80]" name="OpenSelectedReport" duration-ms="124091" started-at="2019-03-14T20:07:18Z" finished-at="2019-03-14T20:09:22Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Interactive Voice Response Report]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OpenSelectedReport -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@4ddced80]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-03-14T20:09:22Z" finished-at="2019-03-14T20:09:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- AbrosiaReports.Zest.ReportNavigation -->
-    </test> <!-- Test for Ambrosia Reports in Chrome -->
-    <test name="Test for Ambrosia Reports in Gecko" duration-ms="9824" started-at="2019-03-14T14:39:22Z" finished-at="2019-03-14T14:39:32Z">
-      <class name="AbrosiaReports.Zest.ReportNavigation">
-        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@34b7ac2f]" name="BrowserSelection" is-config="true" duration-ms="2772" started-at="2019-03-14T20:09:22Z" finished-at="2019-03-14T20:09:25Z">
+        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@5c7fa833]" name="BrowserSelection" is-config="true" duration-ms="4068" started-at="2019-07-29T16:59:43Z" finished-at="2019-07-29T16:59:47Z">
           <params>
             <param index="0">
               <value>
@@ -56,30 +18,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@34b7ac2f]" name="AmbrosiaLogin" duration-ms="7032" started-at="2019-03-14T20:09:25Z" finished-at="2019-03-14T20:09:32Z">
+        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@5c7fa833]" name="AmbrosiaLogin" duration-ms="6354" started-at="2019-07-29T16:59:47Z" finished-at="2019-07-29T16:59:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AmbrosiaLogin -->
-        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@34b7ac2f]" name="LoginValidation" duration-ms="13" started-at="2019-03-14T20:09:32Z" finished-at="2019-03-14T20:09:32Z">
+        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@5c7fa833]" name="LoginValidation" duration-ms="13" started-at="2019-07-29T16:59:53Z" finished-at="2019-07-29T16:59:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginValidation -->
-        <test-method status="PASS" signature="OpenSelectedReport(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@34b7ac2f]" name="OpenSelectedReport" duration-ms="0" started-at="2019-03-14T20:09:32Z" finished-at="2019-03-14T20:09:32Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Music on Hold Report]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OpenSelectedReport -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@34b7ac2f]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-03-14T20:09:32Z" finished-at="2019-03-14T20:09:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
       </class> <!-- AbrosiaReports.Zest.ReportNavigation -->
-    </test> <!-- Test for Ambrosia Reports in Gecko -->
+      <class name="AmbrosiaEvents.ManipulateEvents">
+        <test-method status="PASS" signature="Event1()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@59fa1d9b]" name="Event1" duration-ms="5593" started-at="2019-07-29T16:59:53Z" finished-at="2019-07-29T16:59:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Event1 -->
+      </class> <!-- AmbrosiaEvents.ManipulateEvents -->
+    </test> <!-- Test for Ambrosia Login with Gecko -->
   </suite> <!-- Suite for Ambrosia Reports -->
 </testng-results>

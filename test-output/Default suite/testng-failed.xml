@@ -6,7 +6,7 @@
       <class name="AbrosiaReports.Zest.ReportNavigation">
         <methods>
           <include name="AmbrosiaLogin"/>
-          <include name="Test"/>
+          <include name="clickEvent"/>
           <include name="LoginValidation"/>
         </methods>
       </class> <!-- AbrosiaReports.Zest.ReportNavigation -->
