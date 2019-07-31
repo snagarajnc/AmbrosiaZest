@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite for Ambrosia Reports" duration-ms="19982" started-at="2019-07-29T15:23:48Z" finished-at="2019-07-29T15:24:08Z">
+  <suite name="AmbrosiaSuite" duration-ms="17495" started-at="2019-07-30T14:51:14Z" finished-at="2019-07-30T14:51:31Z">
     <groups>
     </groups>
-    <test name="Test for Ambrosia Login with Gecko" duration-ms="19982" started-at="2019-07-29T15:23:48Z" finished-at="2019-07-29T15:24:08Z">
-      <class name="AbrosiaReports.Zest.ReportNavigation">
-        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@4b9e13df]" name="BrowserSelection" is-config="true" duration-ms="6529" started-at="2019-07-29T20:53:48Z" finished-at="2019-07-29T20:53:55Z">
+    <test name="AmbrosiaTest #1" duration-ms="17495" started-at="2019-07-30T14:51:14Z" finished-at="2019-07-30T14:51:31Z">
+      <class name="AbrosiaReports.Zest.LaunchAmbrosia">
+        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="BrowserSelection" is-config="true" duration-ms="4125" started-at="2019-07-30T20:21:14Z" finished-at="2019-07-30T20:21:18Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[gecko]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@4b9e13df]" name="AmbrosiaLogin" duration-ms="6516" started-at="2019-07-29T20:53:55Z" finished-at="2019-07-29T20:54:01Z">
+        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="AmbrosiaLogin" duration-ms="7262" started-at="2019-07-30T20:21:18Z" finished-at="2019-07-30T20:21:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AmbrosiaLogin -->
-        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.ReportNavigation@4b9e13df]" name="LoginValidation" duration-ms="56" started-at="2019-07-29T20:54:01Z" finished-at="2019-07-29T20:54:01Z">
+        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="LoginValidation" duration-ms="680" started-at="2019-07-30T20:21:18Z" finished-at="2019-07-30T20:21:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginValidation -->
-      </class> <!-- AbrosiaReports.Zest.ReportNavigation -->
+      </class> <!-- AbrosiaReports.Zest.LaunchAmbrosia -->
       <class name="AmbrosiaEvents.ManipulateEvents">
-        <test-method status="PASS" signature="Event1()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@ae45eb6]" name="Event1" duration-ms="6865" started-at="2019-07-29T20:54:01Z" finished-at="2019-07-29T20:54:08Z">
+        <test-method status="PASS" signature="clickEvent1()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@271053e1]" name="clickEvent1" duration-ms="14" started-at="2019-07-30T20:21:18Z" finished-at="2019-07-30T20:21:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Event1 -->
+        </test-method> <!-- clickEvent1 -->
+        <test-method status="PASS" signature="clickEvent()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@271053e1]" name="clickEvent" duration-ms="13291" started-at="2019-07-30T20:21:18Z" finished-at="2019-07-30T20:21:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickEvent -->
       </class> <!-- AmbrosiaEvents.ManipulateEvents -->
-    </test> <!-- Test for Ambrosia Login with Gecko -->
-  </suite> <!-- Suite for Ambrosia Reports -->
+    </test> <!-- AmbrosiaTest #1 -->
+  </suite> <!-- AmbrosiaSuite -->
 </testng-results>

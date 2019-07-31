@@ -3,15 +3,26 @@ package AbrosiaReports.Zest;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class POMRepo extends POMFunction {
 
 	public static int i = 0;
 	public static int incr;
+	public static Random rand = new Random();
+	
+	
+	public static List<WebElement> allRows;
+	public static int ReportCount;
+	public static WebElement ReportsX;
+	
+	
+	
 	public static WebDriver dr;
 	public static By LoginUserName = By.name("login");
 	public static By LoginPassword = By.name("password");
@@ -25,13 +36,15 @@ public class POMRepo extends POMFunction {
 	public static By ReportiFrame = By.tagName("iframe");
 	public static By Report1 = By.id("lblREPORT_NAME_Row2");
 	public static By IVRReport = By.partialLinkText("Interactive Voice Response Report");
-	public static Random rand = new Random();
 	public static String ReportNames;
 	public static By ReportLink = By.partialLinkText("REPORTS");
 	public static DateFormat ObjD = new SimpleDateFormat("dd-M-yyyy hh:mm:ss.SSSS");
 	public static String Today = ObjD.format(new Date());
-	public static By clickEvent = By.linkText("EVENTS"); // Events
 	
+	// Events
+	public static By clickEvent = By.linkText("EVENTS");
+	public static By TabListMain = By.xpath("//*[@role='tablist'][@class='events-tree-accordion ui-accordion ui-widget ui-helper-reset']");
+	public static By ListTabMain = By.xpath("//p-accordiontab[class^='custom-tab ng-tns-c46-']"); 
 	
 	
 	

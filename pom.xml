@@ -13,9 +13,15 @@
 		<mvn.surefire.version>3.0.0-M3</mvn.surefire.version>
 		<testng.verison>6.8</testng.verison>
 		<apachePoi.version>4.0.1</apachePoi.version>
+		<log4j.version>1.2.17</log4j.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

@@ -8,10 +8,14 @@ import AbrosiaReports.Zest.POMRepo;
 
 public class ManipulateEvents {
 	@Test
-	public void Event1() throws ParseException {
+	public void clickEvent() throws ParseException {
 		POMFunction.Info("Events Manipulated");
 		POMRepo.waitforElementVisibile(AbrosiaReports.Zest.POMRepo.clickEvent).click();
 		POMRepo.TakeScreenShot();
-		POMRepo.dr.quit();
+	}
+	
+	@Test
+	public void clickEvent1() {
+		
 	}
 }

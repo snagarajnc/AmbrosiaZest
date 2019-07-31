@@ -26,12 +26,12 @@ public class POMFunction {
 		return (pp);
 	}
 
-	/*Get Values From Property File*/
+	/* Get Values From Property File */
 	public static String GetPropValues(String Credentials) throws IOException {
 		return ObjRepo().getProperty(Credentials);
 	}
-	
-	/* Browsers Definition*/
+
+	/* Browsers Definition */
 	public static void ChromeBrowser(String BrowserLocation) throws IOException {
 		System.setProperty("webdriver.chrome.driver",
 				System.getProperty("user.dir") + ObjRepo().getProperty("ChromeDriverLoc"));
@@ -49,8 +49,13 @@ public class POMFunction {
 				System.getProperty("user.dir") + ObjRepo().getProperty("IEDriverLoc"));
 		POMRepo.dr = new InternetExplorerDriver();
 	}
-	
-	/*Print Logger*/
+
+	/* Launch Application with given URL */
+	public static void LaunchApplication(String WebURL) {
+		POMRepo.dr.get(WebURL);
+	}
+
+	/* Print Logger */
 	public static void Pass(String message) {
 		System.out.println("PASS: " + message);
 	}
@@ -62,25 +67,25 @@ public class POMFunction {
 	public static void Info(String message) {
 		System.out.println("INFO: " + message);
 	}
-	
-	/*Wait for 30 seconds*/
+
+	/* Wait for 30 seconds */
 	public static Wait getWait() {
 		WebDriverWait exWait = new WebDriverWait(POMRepo.dr, 30);
 		return exWait;
 	}
 
-	/*WebElement Wait for Element Visibile*/
+	/* WebElement Wait for Element Visible */
 	public static WebElement waitforElementVisibile(By EleName) {
 		WebElement waitEle = (WebElement) getWait().until(ExpectedConditions.visibilityOfElementLocated(EleName));
 		return waitEle;
 	}
 
-	/*Find Element By Function*/
+	/* Find Element By Function */
 	public static WebElement FindElement(By ByElementName) {
 		return POMRepo.dr.findElement(ByElementName);
 	}
 
-	/*Take Screenshots*/
+	/* Take Screenshots */
 	public static void TakeScreenShot() throws ParseException {
 		long date = POMRepo.ObjD.parse(POMRepo.Today).getTime();
 		File sh = ((TakesScreenshot) POMRepo.dr).getScreenshotAs(OutputType.FILE);
