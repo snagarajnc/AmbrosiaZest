@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class MachineTest1 {
+public class MachineTest1 extends POMFunction {
 	public static WebDriver dr;
 	public static int Month;
 	public static String monthName;
@@ -27,7 +27,7 @@ public class MachineTest1 {
 
 	public static void BrowserDef() throws IOException {
 		System.setProperty("webdriver.gecko.driver",
-				System.getProperty("user.dir") + POMRepo.ObjRepo().getProperty("GeckoDriverLoc"));
+				System.getProperty("user.dir") + ObjRepo().getProperty("GeckoDriverLoc"));
 		dr = new FirefoxDriver();
 	}
 

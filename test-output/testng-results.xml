@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="AmbrosiaSuite" duration-ms="17495" started-at="2019-07-30T14:51:14Z" finished-at="2019-07-30T14:51:31Z">
+  <suite name="AmbrosiaSuite" duration-ms="12414" started-at="2019-07-31T11:58:47Z" finished-at="2019-07-31T11:59:00Z">
     <groups>
     </groups>
-    <test name="AmbrosiaTest #1" duration-ms="17495" started-at="2019-07-30T14:51:14Z" finished-at="2019-07-30T14:51:31Z">
+    <test name="AmbrosiaTest #1" duration-ms="12414" started-at="2019-07-31T11:58:47Z" finished-at="2019-07-31T11:59:00Z">
       <class name="AbrosiaReports.Zest.LaunchAmbrosia">
-        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="BrowserSelection" is-config="true" duration-ms="4125" started-at="2019-07-30T20:21:14Z" finished-at="2019-07-30T20:21:18Z">
+        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="BrowserSelection" is-config="true" duration-ms="3065" started-at="2019-07-31T17:28:47Z" finished-at="2019-07-31T17:28:50Z">
           <params>
             <param index="0">
               <value>
@@ -18,21 +18,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="AmbrosiaLogin" duration-ms="7262" started-at="2019-07-30T20:21:18Z" finished-at="2019-07-30T20:21:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AmbrosiaLogin -->
-        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="LoginValidation" duration-ms="680" started-at="2019-07-30T20:21:18Z" finished-at="2019-07-30T20:21:19Z">
+        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="LoginValidation" duration-ms="619" started-at="2019-07-31T17:28:50Z" finished-at="2019-07-31T17:28:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginValidation -->
-      </class> <!-- AbrosiaReports.Zest.LaunchAmbrosia -->
-      <class name="AmbrosiaEvents.ManipulateEvents">
-        <test-method status="PASS" signature="clickEvent1()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@271053e1]" name="clickEvent1" duration-ms="14" started-at="2019-07-30T20:21:18Z" finished-at="2019-07-30T20:21:18Z">
+        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="AmbrosiaLogin" duration-ms="6795" started-at="2019-07-31T17:28:50Z" finished-at="2019-07-31T17:28:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickEvent1 -->
-        <test-method status="PASS" signature="clickEvent()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@271053e1]" name="clickEvent" duration-ms="13291" started-at="2019-07-30T20:21:18Z" finished-at="2019-07-30T20:21:31Z">
+        </test-method> <!-- AmbrosiaLogin -->
+      </class> <!-- AbrosiaReports.Zest.LaunchAmbrosia -->
+      <class name="AmbrosiaEvents.ManipulateEvents">
+        <test-method status="PASS" signature="TakeEventsList()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@271053e1]" name="TakeEventsList" duration-ms="9308" started-at="2019-07-31T17:28:50Z" finished-at="2019-07-31T17:29:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TakeEventsList -->
+        <test-method status="PASS" signature="clickEvent()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@271053e1]" name="clickEvent" duration-ms="9141" started-at="2019-07-31T17:28:50Z" finished-at="2019-07-31T17:28:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickEvent -->

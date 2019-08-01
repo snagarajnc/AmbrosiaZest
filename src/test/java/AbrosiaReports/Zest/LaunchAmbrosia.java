@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class LaunchAmbrosia extends POMRepo {
+public class LaunchAmbrosia extends POMFunction {
 
 	static Logger log = Logger.getLogger(LaunchAmbrosia.class.getName());
 

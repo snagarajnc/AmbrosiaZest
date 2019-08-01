@@ -10,18 +10,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class POMRepo extends POMFunction {
+public class POMRepo {
 
 	public static int i = 0;
 	public static int incr;
 	public static Random rand = new Random();
 	
-	
 	public static List<WebElement> allRows;
 	public static int ReportCount;
 	public static WebElement ReportsX;
-	
-	
 	
 	public static WebDriver dr;
 	public static By LoginUserName = By.name("login");
@@ -44,7 +41,7 @@ public class POMRepo extends POMFunction {
 	// Events
 	public static By clickEvent = By.linkText("EVENTS");
 	public static By TabListMain = By.xpath("//*[@role='tablist'][@class='events-tree-accordion ui-accordion ui-widget ui-helper-reset']");
-	public static By ListTabMain = By.xpath("//p-accordiontab[class^='custom-tab ng-tns-c46-']"); 
+	public static By ListTabMain = By.xpath("//p-accordiontab[contains(@class, 'custom-tab ng-tns')]"); 
 	
 	
 	

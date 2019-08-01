@@ -8,31 +8,37 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Test11 {
+import AmbrosiaEvents.ManipulateEvents;
+
+public class Test11 extends POMFunction {
+	
 	public static void main(String[] args) throws IOException, InterruptedException, ParseException {
-		System.setProperty("webdriver.gecko.driver",
-				System.getProperty("user.dir") + POMRepo.ObjRepo().getProperty("GeckoDriverLoc"));
-		POMRepo.dr = new FirefoxDriver();
+		Logger log = Logger.getLogger(Test11.class.getName());
+		log.info(null);
+		/*System.setProperty("webdriver.gecko.driver",
+				System.getProperty("user.dir") + ObjRepo().getProperty("GeckoDriverLoc"));
+		dr = new FirefoxDriver();
 		TakeScreenShot();
-		POMRepo.dr.get("https://www.google.com/");
+		dr.get("https://www.google.com/");
 		By SignIn = By.xpath("//*[@id='gb_70']");
 		POMFunction.FindElement(SignIn).click();
-		TakeScreenShot();
+		TakeScreenShot();*/
 	}
 
-	public static void TakeScreenShot() throws IOException, ParseException {
+	public static void TakeScreenShot() throws ParseException {
 		DateFormat ObjD = new SimpleDateFormat("dd-M-yyyy hh:mm:ss.SSSS");
 		String Today = ObjD.format(new Date());
 		long date = ObjD.parse(Today).getTime();
-		File sh = ((TakesScreenshot) POMRepo.dr).getScreenshotAs(OutputType.FILE);
+		File sh = ((TakesScreenshot) dr).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(sh, new File(System.getProperty("user.dir")
-					+ POMRepo.ObjRepo().getProperty("ScreenshotLoc") + "Screenshot-" + date + ".png"));
+			FileUtils.copyFile(sh, new File(System.getProperty("user.dir") + ObjRepo().getProperty("ScreenshotLoc")
+					+ "Screenshot-" + date + ".png"));
 		}
 
 		catch (IOException e) {
