@@ -13,12 +13,12 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class LaunchAmbrosia extends POMFunction {
-
-	static Logger log = Logger.getLogger(LaunchAmbrosia.class.getName());
+	public static LaunchAmbrosia obj = new LaunchAmbrosia();
 
 	@Parameters("browser")
 	@BeforeTest
 	public void BrowserSelection(String browser) throws AWTException, IOException, ParseException {
+		Loadlog4j();
 
 		if (browser.equalsIgnoreCase("chrome")) {
 			ChromeBrowser("ChromeDriverLoc");
@@ -31,6 +31,7 @@ public class LaunchAmbrosia extends POMFunction {
 		else if (browser.equalsIgnoreCase("ie")) {
 			IEBrowser("IEDriverLoc");
 		}
+		obj.Log().debug("Browser selected as : " + browser); // Logger
 		TakeScreenShot();
 	}
 
@@ -38,11 +39,15 @@ public class LaunchAmbrosia extends POMFunction {
 	public static void AmbrosiaLogin() throws IOException, InterruptedException, ParseException {
 		TakeScreenShot();
 		LaunchApplication(GetPropValues("URL"));
+		obj.Log().info("URL passed as " + GetPropValues("URL")); // Logger
 		waitforElementVisibile(LoginUserName).sendKeys(GetPropValues("UserNameCredential"));
 		waitforElementVisibile(LoginPassword).sendKeys(GetPropValues("PasswordCredential"));
+		obj.Log().info("Credentials passed as " + GetPropValues("UserNameCredential") + "/"
+				+ GetPropValues("PasswordCredential")); // Logger
 		TakeScreenShot();
 		waitforElementVisibile(LoginSubmit).click();
 		waitforElementVisibile(Logo).click();
+		obj.Log().debug("Clicked Submit"); // Logger
 		TakeScreenShot();
 	}
 
@@ -53,9 +58,10 @@ public class LaunchAmbrosia extends POMFunction {
 			POMFunction.Error("Your credential is wrong. Test again with valid credential !!!");
 			dr.quit();
 		} else {
-			log.info("Your credential worked to Launch ");
+			obj.Log().info("Your credential worked to Launch "); // Logger
 			TakeScreenShot();
 		}
+		obj.Log().debug("Login Validated"); // Logger
 	}
 
 	@Test(enabled = false)

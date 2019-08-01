@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="AmbrosiaSuite" duration-ms="12414" started-at="2019-07-31T11:58:47Z" finished-at="2019-07-31T11:59:00Z">
+  <suite name="AmbrosiaSuite" duration-ms="12807" started-at="2019-08-01T12:37:29Z" finished-at="2019-08-01T12:37:41Z">
     <groups>
     </groups>
-    <test name="AmbrosiaTest #1" duration-ms="12414" started-at="2019-07-31T11:58:47Z" finished-at="2019-07-31T11:59:00Z">
+    <test name="AmbrosiaTest #1" duration-ms="12807" started-at="2019-08-01T12:37:29Z" finished-at="2019-08-01T12:37:41Z">
       <class name="AbrosiaReports.Zest.LaunchAmbrosia">
-        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="BrowserSelection" is-config="true" duration-ms="3065" started-at="2019-07-31T17:28:47Z" finished-at="2019-07-31T17:28:50Z">
+        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@28d25987]" name="BrowserSelection" is-config="true" duration-ms="3244" started-at="2019-08-01T18:07:29Z" finished-at="2019-08-01T18:07:32Z">
           <params>
             <param index="0">
               <value>
@@ -18,24 +18,28 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="LoginValidation" duration-ms="619" started-at="2019-07-31T17:28:50Z" finished-at="2019-07-31T17:28:51Z">
+        <test-method status="PASS" signature="initlog4j()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@5e3a8624]" name="initlog4j" is-config="true" duration-ms="3" started-at="2019-08-01T18:07:32Z" finished-at="2019-08-01T18:07:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginValidation -->
-        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@548e7350]" name="AmbrosiaLogin" duration-ms="6795" started-at="2019-07-31T17:28:50Z" finished-at="2019-07-31T17:28:57Z">
+        </test-method> <!-- initlog4j -->
+        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@28d25987]" name="AmbrosiaLogin" duration-ms="7032" started-at="2019-08-01T18:07:32Z" finished-at="2019-08-01T18:07:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AmbrosiaLogin -->
-      </class> <!-- AbrosiaReports.Zest.LaunchAmbrosia -->
-      <class name="AmbrosiaEvents.ManipulateEvents">
-        <test-method status="PASS" signature="TakeEventsList()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@271053e1]" name="TakeEventsList" duration-ms="9308" started-at="2019-07-31T17:28:50Z" finished-at="2019-07-31T17:29:00Z">
+        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AbrosiaReports.Zest.LaunchAmbrosia@28d25987]" name="LoginValidation" duration-ms="623" started-at="2019-08-01T18:07:32Z" finished-at="2019-08-01T18:07:33Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TakeEventsList -->
-        <test-method status="PASS" signature="clickEvent()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@271053e1]" name="clickEvent" duration-ms="9141" started-at="2019-07-31T17:28:50Z" finished-at="2019-07-31T17:28:59Z">
+        </test-method> <!-- LoginValidation -->
+      </class> <!-- AbrosiaReports.Zest.LaunchAmbrosia -->
+      <class name="AmbrosiaEvents.ManipulateEvents">
+        <test-method status="PASS" signature="clickEvent()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@5e3a8624]" name="clickEvent" duration-ms="9327" started-at="2019-08-01T18:07:32Z" finished-at="2019-08-01T18:07:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickEvent -->
+        <test-method status="PASS" signature="TakeEventsList()[pri:0, instance:AmbrosiaEvents.ManipulateEvents@5e3a8624]" name="TakeEventsList" duration-ms="9533" started-at="2019-08-01T18:07:32Z" finished-at="2019-08-01T18:07:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TakeEventsList -->
       </class> <!-- AmbrosiaEvents.ManipulateEvents -->
     </test> <!-- AmbrosiaTest #1 -->
   </suite> <!-- AmbrosiaSuite -->

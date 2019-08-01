@@ -11,6 +11,7 @@ import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -112,6 +113,17 @@ public class POMFunction extends POMRepo {
 		} catch (IOException e) {
 			POMFunction.Error(e.getMessage());
 		}
+	}
+
+	/* Initialization for log4j */
+	public static void Loadlog4j() throws IOException {
+		PropertyConfigurator.configure(System.getProperty("user.dir") + ObjRepo().getProperty("log4jLoc"));
+	}
+
+	public Logger Log() {
+		String ClassName = this.getClass().getSimpleName();
+		Logger log = Logger.getLogger(ClassName);
+		return log;
 	}
 
 }

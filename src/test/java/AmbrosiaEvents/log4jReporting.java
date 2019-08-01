@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.apache.log4j.PatternLayout;
+import org.apache.log4j.RollingFileAppender;
 
 import AbrosiaReports.Zest.POMFunction;
 
@@ -16,14 +18,12 @@ public class log4jReporting extends POMFunction {
 	public static WebDriver driver;
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
-
+		PropertyConfigurator.configure("D:/Users/snagaraj/workspace/Zest/log4j/log4j.properties");
+		Logger log = Logger.getLogger("devpinoyLogger");		
+		
 		System.setProperty("webdriver.chrome.driver",
 				System.getProperty("user.dir") + ObjRepo().getProperty("ChromeDriverLoc"));
 		driver = new ChromeDriver();
-
-		Logger log = Logger.getLogger("devpinoyLogger");
 
 		driver.get("http://healthunify.com/bmicalculator/");
 		log.debug("opening webiste");
