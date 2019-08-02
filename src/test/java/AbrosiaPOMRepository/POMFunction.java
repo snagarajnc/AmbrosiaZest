@@ -1,4 +1,4 @@
-package AbrosiaReports.Zest;
+package AbrosiaPOMRepository;
 
 import java.io.File;
 import java.io.FileReader;
@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class POMFunction extends POMRepo {
+public class POMFunction extends POMObjectRepo {
 	public static Properties ObjRepo() throws IOException {
 		FileReader ff = new FileReader(System.getProperty("user.dir") + "/utilsPorperties/ObjectRepoProp.properties");
 		Properties pp = new Properties();
@@ -103,8 +103,7 @@ public class POMFunction extends POMRepo {
 		long date = ObjD.parse(Today).getTime();
 		File sh = ((TakesScreenshot) dr).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(sh, new File(System.getProperty("user.dir") + ObjRepo().getProperty("ScreenshotLoc")
-					+ "Screenshot-" + date + ".png"));
+			FileUtils.copyFile(sh, new File(ObjRepo().getProperty("ScreenshotLoc") + "Screenshot-" + date + ".png"));
 		} catch (IOException e) {
 			POMFunction.Error(e.getMessage());
 		}

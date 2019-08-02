@@ -1,4 +1,4 @@
-package AbrosiaReports.Zest;
+package pak;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,8 +14,10 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Test11 extends POMFunction {
-	public static Logger log = Logger.getLogger(Test11.class.getClass());
+import AbrosiaPOMRepository.POMFunction;
+
+public class PracticeClass extends POMFunction {
+	public static Logger log = Logger.getLogger(PracticeClass.class.getClass());
 
 	public static void main(String[] args) throws IOException, InterruptedException, ParseException {
 		Loadlog4j();
@@ -40,7 +42,7 @@ public class Test11 extends POMFunction {
 		long date = ObjD.parse(Today).getTime();
 		File sh = ((TakesScreenshot) dr).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(sh, new File(System.getProperty("user.dir") + ObjRepo().getProperty("ScreenshotLoc")
+			FileUtils.copyFile(sh, new File(ObjRepo().getProperty("ScreenshotLoc")
 					+ "Screenshot-" + date + ".png"));
 		}
 

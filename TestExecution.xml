@@ -6,16 +6,8 @@
 		<parameter name="browser" value="chrome" />
 		<parameter name="ReportName" value="Music on Hold Report" />
 		<classes>
-			<class name="AbrosiaReports.Zest.LaunchAmbrosia" />
-			<class name="AmbrosiaEvents.ManipulateEvents" />
+			<class name="AmbrosiaLaunchSite.LaunchAmbrosia" />
+			<class name="AmbrosiaEvents.EventsNavigation" />
 		</classes>
 	</test>
-<!-- 	<test name="AmbrosiaTest #2">
-		<parameter name="browser" value="Gecko" />
-		<parameter name="ReportName" value="Music on Hold Report" />
-		<classes>
-			<class name="AbrosiaReports.Zest.LaunchAmbrosia" />
-			<class name="AmbrosiaEvents.ManipulateEvents" />
-		</classes>
-	</test> -->
-</suite> <!-- Suite -->
+</suite>

@@ -9,11 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import AbrosiaReports.Zest.POMFunction;
-import AbrosiaReports.Zest.POMRepo;
+import AbrosiaPOMRepository.POMFunction;
+import AbrosiaPOMRepository.POMObjectRepo;
 
-public class ManipulateEvents extends POMFunction {
-	public static Logger log = Logger.getLogger(ManipulateEvents.class.getClass());
+public class EventsNavigation extends POMFunction {
+	public static Logger log = Logger.getLogger(EventsNavigation.class.getClass());
 
 	@BeforeTest
 	public void initlog4j() throws IOException {
@@ -24,7 +24,7 @@ public class ManipulateEvents extends POMFunction {
 	public void clickEvent() throws ParseException {
 		try {
 		POMFunction.Info("Events Manipulated");
-		waitforElementVisibile(AbrosiaReports.Zest.POMRepo.clickEvent).click();
+		waitforElementVisibile(AbrosiaPOMRepository.POMObjectRepo.clickEvent).click();
 		TakeScreenShot();
 		log.debug("Events Menu clicked"); // Logger
 		} catch (Exception e) {
@@ -36,7 +36,7 @@ public class ManipulateEvents extends POMFunction {
 	@Test
 	public void TakeEventsList() {
 		try {
-		WebElement AllTabList = waitforElementVisibile(POMRepo.TabListMain);
+		WebElement AllTabList = waitforElementVisibile(POMObjectRepo.TabListMain);
 		List<WebElement> ListMenu = AllTabList.findElements(ListTabMain);
 		Info(ListMenu.size());
 

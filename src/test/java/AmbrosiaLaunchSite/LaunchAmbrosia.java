@@ -1,4 +1,4 @@
-package AbrosiaReports.Zest;
+package AmbrosiaLaunchSite;
 
 import java.awt.AWTException;
 import java.io.IOException;
@@ -11,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import AbrosiaPOMRepository.POMFunction;
 
 public class LaunchAmbrosia extends POMFunction {
 
