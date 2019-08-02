@@ -23,7 +23,7 @@ public class EventsNavigation extends POMFunction {
 	@Test
 	public void clickEvent() throws ParseException {
 		try {
-		POMFunction.Info("Events Manipulated");
+		POMFunction.Info("Events Navigation");
 		waitforElementVisibile(AbrosiaPOMRepository.POMObjectRepo.clickEvent).click();
 		TakeScreenShot();
 		log.debug("Events Menu clicked"); // Logger
