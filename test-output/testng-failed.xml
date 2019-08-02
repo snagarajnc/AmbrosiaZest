@@ -15,6 +15,7 @@
       <class name="AmbrosiaEvents.ManipulateEvents">
         <methods>
           <include name="TakeEventsList"/>
+          <include name="initlog4j"/>
         </methods>
       </class> <!-- AmbrosiaEvents.ManipulateEvents -->
     </classes>

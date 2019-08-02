@@ -1,17 +1,12 @@
 package AbrosiaReports.Zest;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.text.ParseException;
-import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -119,11 +114,4 @@ public class POMFunction extends POMRepo {
 	public static void Loadlog4j() throws IOException {
 		PropertyConfigurator.configure(System.getProperty("user.dir") + ObjRepo().getProperty("log4jLoc"));
 	}
-
-	public Logger Log() {
-		String ClassName = this.getClass().getSimpleName();
-		Logger log = Logger.getLogger(ClassName);
-		return log;
-	}
-
 }

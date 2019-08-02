@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>        
+  </head>
+  <body>
+    <div id="table_div">
+                <h2> Parse String To HTML For Reporting Results</h2>
+                </div>
+                <div class = "table_responsive">
+                <h3> Json Coversion HTML table</h3>
+                <button>Get Json Data</button>
+                <table class="tableconversion"  id="jsoncon">
+                                <tr>
+                                <th>Actual</th>
+                                <th>Expected</th>
+                                <th>ImgPath</th>
+                                <th>Status</th>
+                                <th>isTitile</th>
+                                </tr>
+                </table>
+                </div>   <script>
+                var  jsonArr = '[{"actual":"Chrome session is created successfully","expected":"Chrome session should be created successfully","imgPath":null,"status":"INFO","isTitile":"false"},{"actual":"URL <b>https://ambrosia.lab.nectarvoip.com</b> is navigated","expected":"URL <b>https://ambrosia.lab.nectarvoip.com</b> should be navigated","imgPath":null,"status":"INFO","isTitile":"false"},{"actual":"User is able to clear text in the <b>User name</b> web element","expected":"User should be able to clear text in the <b>User name</b> web element","imgPath":null,"status":"DONE","isTitile":"false"},{"actual":"User is able to enter <b>test</b> text in the <b>Password</b> web element","expected":"User should be able to enter <b>test</b> text in the <b>Password</b> web element","imgPath":null,"status":"DONE","isTitile":"false"},{"actual":"User is able to click the <b>Login</b> web element","expected":"User should be able to click the <b>Login</b> web element","imgPath":null,"status":"DONE","isTitile":"false"},{"actual":"Error message <b>Your login or password was incorrect. Please try again.</b> is displayed on the login page","expected":"Verify whether the error message <b>Your login or password was incorrect. Please try again.</b> is displayed on the login page","imgPath":null,"status":"PASS","isTitile":"false"}]';
+                var jsonObj = $.parseJSON(jsonArr);
+
+                $("button").click(function(){
+                                document.getElementById("jsoncon").innerHTML='';
+                                for(var i =0 ; i < jsonObj.length ; i++){
+                                                var  row = document.createElement("tr");
+                                                var td1 = document.createElement("td");
+                                                var td2 = document.createElement("td");
+                                                var td3 = document.createElement("td");
+                                                var td4 = document.createElement("td");
+                                                var td5 = document.createElement("td");
+                                                td1.appendChild(document.createTextNode(jsonObj[i].actual));
+                                                td2.appendChild(document.createTextNode(jsonObj[i].expected));
+                                                td3.appendChild(document.createTextNode(jsonObj[i].imgPath));
+                                                td4.appendChild(document.createTextNode(jsonObj[i].status));
+                                                td5.appendChild(document.createTextNode(jsonObj[i].isTitile));
+                                                row.appendChild(td1);
+                                                row.appendChild(td2);
+                                                row.appendChild(td3);
+                                                row.appendChild(td4);
+                                                row.appendChild(td5);
+                                                
+                                                document.getElementById("jsoncon").appendChild(row);
+                                }
+                                
+                });
+</script>
+  </body>
+</html>

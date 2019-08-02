@@ -13,7 +13,8 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class LaunchAmbrosia extends POMFunction {
-	public static LaunchAmbrosia obj = new LaunchAmbrosia();
+
+	public static Logger log = Logger.getLogger(LaunchAmbrosia.class.getClass());
 
 	@Parameters("browser")
 	@BeforeTest
@@ -31,42 +32,47 @@ public class LaunchAmbrosia extends POMFunction {
 		else if (browser.equalsIgnoreCase("ie")) {
 			IEBrowser("IEDriverLoc");
 		}
-		obj.Log().debug("Browser selected as : " + browser); // Logger
+		log.debug("Browser selected as : " + browser); // Logger
 		TakeScreenShot();
 	}
 
 	@Test(priority = 2)
 	public static void AmbrosiaLogin() throws IOException, InterruptedException, ParseException {
 		TakeScreenShot();
+		try {
 		LaunchApplication(GetPropValues("URL"));
-		obj.Log().info("URL passed as " + GetPropValues("URL")); // Logger
+		log.info("URL passed as " + GetPropValues("URL")); // Logger
 		waitforElementVisibile(LoginUserName).sendKeys(GetPropValues("UserNameCredential"));
 		waitforElementVisibile(LoginPassword).sendKeys(GetPropValues("PasswordCredential"));
-		obj.Log().info("Credentials passed as " + GetPropValues("UserNameCredential") + "/"
+		log.info("Credentials passed as " + GetPropValues("UserNameCredential") + "/"
 				+ GetPropValues("PasswordCredential")); // Logger
 		TakeScreenShot();
 		waitforElementVisibile(LoginSubmit).click();
 		waitforElementVisibile(Logo).click();
-		obj.Log().debug("Clicked Submit"); // Logger
+		log.debug("Clicked Submit"); // Logger
+		} catch (Exception e) {
+			// TODO: handle exception
+			log.error(e);
+		}
 		TakeScreenShot();
 	}
 
 	@Test(priority = 3)
 	public static void LoginValidation() throws ParseException {
+		try { 
 		String ErrorMsg = dr.getPageSource();
 		if (ErrorMsg.contains("PASSWORD")) {
 			POMFunction.Error("Your credential is wrong. Test again with valid credential !!!");
 			dr.quit();
 		} else {
-			obj.Log().info("Your credential worked to Launch "); // Logger
+			log.info("Your credential worked to Launch "); // Logger
 			TakeScreenShot();
 		}
-		obj.Log().debug("Login Validated"); // Logger
-	}
-
-	@Test(enabled = false)
-	public static void clickEvent() throws InterruptedException {
-		waitforElementVisibile(clickEvent).click();
+		log.debug("Login Validated"); // Logger
+		} catch (Exception e) {
+			// TODO: handle exception
+			log.error(e);
+		}
 	}
 
 	@Test(enabled = false)

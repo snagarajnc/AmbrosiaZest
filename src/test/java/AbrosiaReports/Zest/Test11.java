@@ -9,36 +9,29 @@ import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.apache.log4j.PatternLayout;
-import org.apache.log4j.RollingFileAppender;
 
 public class Test11 extends POMFunction {
-	
+	public static Logger log = Logger.getLogger(Test11.class.getClass());
+
 	public static void main(String[] args) throws IOException, InterruptedException, ParseException {
 		Loadlog4j();
-		Test11 obj = new Test11();
-		obj.Log();
-//		PropertyConfigurator.configure(System.getProperty("user.dir")+ObjRepo().getProperty("log4jLoc"));
-		System.out.println("DDD : "+obj.Log());
-		
-//		Logger log = Logger.getLogger(Test11.class.getName());	
-		
+		System.out.println("DDD : " + log);
+
 		System.setProperty("webdriver.gecko.driver",
 				System.getProperty("user.dir") + ObjRepo().getProperty("GeckoDriverLoc"));
 		dr = new FirefoxDriver();
-		obj.Log().info("Browser Launched");
-		/*TakeScreenShot();
+		log.info("Browser Launched");
+		TakeScreenShot();
 		dr.get("https://www.google.com/");
 		log.debug("URL Passed");
 		By SignIn = By.xpath("//*[@id='gb_70']");
 		POMFunction.FindElement(SignIn).click();
 		log.debug("Sign In clicked");
-		TakeScreenShot();*/
+		TakeScreenShot();
 	}
 
 	public static void TakeScreenShot() throws ParseException {
