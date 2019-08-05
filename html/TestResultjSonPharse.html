@@ -1,52 +1,93 @@
 <html>
-  <head>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>        
-  </head>
-  <body>
-    <div id="table_div">
-                <h2> Parse String To HTML For Reporting Results</h2>
-                </div>
-                <div class = "table_responsive">
-                <h3> Json Coversion HTML table</h3>
-                <button>Get Json Data</button>
-                <table class="tableconversion"  id="jsoncon">
-                                <tr>
-								<th>S.No.</th>
-                                <th>Actual</th>
-                                <th>Expected</th>
-                                <th>ImgPath</th>
-                                <th>Status</th>
-                                <th>isTitile</th>
-                                </tr>
-                </table>
-                </div>   <script>
-                var  jsonArr = '[{"actual":"Chrome session is created successfully","expected":"Chrome session should be created successfully","imgPath":null,"status":"INFO","isTitile":"false"},{"actual":"URL <b>https://ambrosia.lab.nectarvoip.com</b> is navigated","expected":"URL <b>https://ambrosia.lab.nectarvoip.com</b> should be navigated","imgPath":null,"status":"INFO","isTitile":"false"},{"actual":"User is able to clear text in the <b>User name</b> web element","expected":"User should be able to clear text in the <b>User name</b> web element","imgPath":null,"status":"DONE","isTitile":"false"},{"actual":"User is able to enter <b>test</b> text in the <b>Password</b> web element","expected":"User should be able to enter <b>test</b> text in the <b>Password</b> web element","imgPath":null,"status":"DONE","isTitile":"false"},{"actual":"User is able to click the <b>Login</b> web element","expected":"User should be able to click the <b>Login</b> web element","imgPath":null,"status":"DONE","isTitile":"false"},{"actual":"Error message <b>Your login or password was incorrect. Please try again.</b> is displayed on the login page","expected":"Verify whether the error message <b>Your login or password was incorrect. Please try again.</b> is displayed on the login page","imgPath":null,"status":"PASS","isTitile":"false"}]';
+<head>
+<meta charset="UTF-8"> 
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {height:35px; width: 13%; font-size: larger; color: #FFFFFF; background-color: #666699; border-radius: 12px;}
+
+table, th, td {
+	border: 1px solid black;
+	padding: 15px;
+	border-spacing: 5px;
+}
+
+table tr:nth-child(even) {
+	background-color: #C1C1D6;
+}
+
+table tr:nth-child(odd) {
+	background-color: #E0E0EA;
+}
+
+table th {
+	background-color: #666699;
+	color: white;
+}
+
+</style>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+	<body>
+	<div id="table_div">
+		<h1 align="center" style="color:#666699;"> Parsed HTML Report </h1>
+	</div>
+	<div class="table_responsive"> </div>
+		<button style="margin:15px;" class="button1"> Get Json Data </button>
+		<table style="width: 100%" id="jsoncon" class="tableconversion">
+			<thead>
+			<tr>
+				<th>S.No.</th>
+				<th>Actual</th>
+				<th>Expected</th>
+				<th>ImgPath</th>
+				<th>Status</th>
+			</tr>
+			</thead>
+			<tbody>
+				<script>
+	
+                var  jsonArr = '[{"actual":"Chrome session is created successfully","expected":"Chrome session should be created successfully","imgPath":"N/A","status":"INFO","isTitile":"false"},{"actual":"URL <b>https://ambrosia.lab.nectarvoip.com</b> is navigated","expected":"URL <b>https://ambrosia.lab.nectarvoip.com</b> should be navigated","imgPath":"N/A","status":"INFO","isTitile":"false"},{"actual":"User is able to clear text in the <b>User name</b> web element","expected":"User should be able to clear text in the <b>User name</b> web element","imgPath":"N/A","status":"DONE","isTitile":"false"},{"actual":"User is able to enter <b>test</b> text in the <b>Password</b> web element","expected":"User should be able to enter <b>test</b> text in the <b>Password</b> web element","imgPath":"N/A","status":"DONE","isTitile":"false"},{"actual":"User is able to click the <b>Login</b> web element","expected":"User should be able to click the <b>Login</b> web element","imgPath":"N/A","status":"DONE","isTitile":"false"},{"actual":"Error message <b>Your login or password was incorrect. Please try again.</b> is displayed on the login page","expected":"Verify whether the error message <b>Your login or password was incorrect. Please try again.</b> is displayed on the login page","imgPath":"N/A","status":"PASS","isTitile":"false"}]';
                 var jsonObj = $.parseJSON(jsonArr);
 
                 $("button").click(function(){
                                 document.getElementById("jsoncon").innerHTML='';
                                 for(var i =0 ; i < jsonObj.length ; i++){
                                                 var  row = document.createElement("tr");
-                                                var td1 = document.createElement("td");
+                                                var td0 = document.createElement("td");
+												var td1 = document.createElement("td");
                                                 var td2 = document.createElement("td");
                                                 var td3 = document.createElement("td");
                                                 var td4 = document.createElement("td");
                                                 var td5 = document.createElement("td");
+												td0.appendChild(document.createTextNode(i+1));
                                                 td1.appendChild(document.createTextNode(jsonObj[i].actual));
                                                 td2.appendChild(document.createTextNode(jsonObj[i].expected));
                                                 td3.appendChild(document.createTextNode(jsonObj[i].imgPath));
                                                 td4.appendChild(document.createTextNode(jsonObj[i].status));
                                                 td5.appendChild(document.createTextNode(jsonObj[i].isTitile));
-                                                row.appendChild(td1);
+                                                row.appendChild(td0);
+												row.appendChild(td1);
                                                 row.appendChild(td2);
                                                 row.appendChild(td3);
                                                 row.appendChild(td4);
                                                 row.appendChild(td5);
-                                                
                                                 document.getElementById("jsoncon").appendChild(row);
                                 }
-                                
                 });
-</script>
-  </body>
+				</script>
+			</tbody>
+		</table>
+	</body>
 </html>

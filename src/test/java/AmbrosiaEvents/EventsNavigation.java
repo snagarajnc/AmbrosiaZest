@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import AbrosiaPOMRepository.POMFunction;
+import org.apache.log4j.RollingFileAppender;
 import AbrosiaPOMRepository.POMObjectRepo;
 
 public class EventsNavigation extends POMFunction {
