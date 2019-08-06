@@ -119,7 +119,7 @@ public class POMFunction extends POMObjectRepo {
 		PropertyConfigurator.configure(System.getProperty("user.dir") + ObjRepo().getProperty("log4jLoc"));
 	}
 
-	/* Create Txt  file */
+	/* Create Txt file */
 	public static void createTxtFile() throws IOException {
 		TestFile = System.getProperty("user.dir") + ObjRepo().getProperty("TxtOutputLoc") + "\\TextOutput-"
 				+ currentDate + ".txt";
