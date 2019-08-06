@@ -38,7 +38,7 @@ public class POMFunction extends POMObjectRepo {
 				System.getProperty("user.dir") + ObjRepo().getProperty("ChromeDriverLoc"));
 		dr = new ChromeDriver();
 		System.setProperty("webdriver.chrome.silentOutput", "true");
-		
+
 	}
 
 	public static void FirefoxBrowser(String BrowserLocation) throws IOException {

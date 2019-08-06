@@ -35,7 +35,7 @@ public class LaunchAmbrosia extends POMFunction {
 		else if (browser.equalsIgnoreCase("ie")) {
 			IEBrowser("IEDriverLoc");
 		}
-		log.debug("Browser selected as : " + browser); // Logger
+		log.info("Browser selected as : " + browser); // Logger
 		TakeScreenShot();
 	}
 
@@ -52,7 +52,7 @@ public class LaunchAmbrosia extends POMFunction {
 		TakeScreenShot();
 		waitforElementVisibile(LoginSubmit).click();
 		waitforElementVisibile(Logo).click();
-		log.debug("Clicked Submit"); // Logger
+		log.info("Clicked Submit"); // Logger
 		} catch (Exception e) {
 			// TODO: handle exception
 			log.error(e);
