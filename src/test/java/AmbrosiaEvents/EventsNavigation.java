@@ -30,7 +30,6 @@ public class EventsNavigation extends POMFunction {
 	@Test(priority = 1)
 	public void clickEvent() throws ParseException {
 		try {
-			POMFunction.Info("Events Navigation");
 			waitforElementVisibile(AbrosiaPOMRepository.POMObjectRepo.clickEvent).click();
 			TakeScreenShot();
 			log.info("Events Menu clicked"); // Logger
@@ -76,7 +75,6 @@ public class EventsNavigation extends POMFunction {
 				} else {
 					log.debug("****** Empty Field ******"); // Logger
 				}
-
 			}
 			br.close();
 			log.info("Event data collected in " + TestFile + " file");
