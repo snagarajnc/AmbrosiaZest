@@ -1,5 +1,7 @@
 package AbrosiaPOMRepository;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -37,6 +39,8 @@ public class POMObjectRepo {
 	public static By ReportLink = By.partialLinkText("REPORTS");
 	public static DateFormat ObjD = new SimpleDateFormat("dd-M-yyyy hh:mm:ss.SSSS");
 	public static String Today = ObjD.format(new Date());
+	public static long currentDate;
+	public static String TestFile;
 
 	// Events
 	public static By clickEvent = By.linkText("EVENTS");
@@ -49,4 +53,14 @@ public class POMObjectRepo {
 		By SibListTabMain = By.xpath("//*[contains(@class,'" + classWeb + "')]//li[1]");
 		return SibListTabMain;
 	}
+	
+	/* Get data from View event table */
+	public static By completeViewEvent = By.xpath("//div[contains(@class,'relative-block event-view ng-star-inserted')]");
+	public static By cellViewEvent = By.xpath("//div[contains(@class,'relative-block event-view ng-star-inserted')]//div[contains(@class,'col-xs-')]");
+	
+	
+	/* Create Txt File */
+	public static FileWriter FW;
+	public static BufferedWriter br;
 }
+

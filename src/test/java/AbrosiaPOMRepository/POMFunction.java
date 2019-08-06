@@ -1,7 +1,9 @@
 package AbrosiaPOMRepository;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.Properties;
@@ -102,10 +104,11 @@ public class POMFunction extends POMObjectRepo {
 
 	/* Take Screenshots */
 	public static void TakeScreenShot() throws ParseException {
-		long date = ObjD.parse(Today).getTime();
+		currentDate = ObjD.parse(Today).getTime();
 		File sh = ((TakesScreenshot) dr).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(sh, new File(ObjRepo().getProperty("ScreenshotLoc") + "Screenshot-" + date + ".png"));
+			FileUtils.copyFile(sh,
+					new File(ObjRepo().getProperty("ScreenshotLoc") + "Screenshot-" + currentDate + ".png"));
 		} catch (IOException e) {
 			POMFunction.Error(e.getMessage());
 		}
@@ -115,4 +118,17 @@ public class POMFunction extends POMObjectRepo {
 	public static void Loadlog4j() throws IOException {
 		PropertyConfigurator.configure(System.getProperty("user.dir") + ObjRepo().getProperty("log4jLoc"));
 	}
+
+	/* Create Txt  file */
+	public static void createTxtFile() throws IOException {
+		TestFile = System.getProperty("user.dir") + ObjRepo().getProperty("TxtOutputLoc") + "\\TextOutput-"
+				+ currentDate + ".txt";
+		Error("EEEE : " + TestFile);
+		File FC = new File(TestFile);// Created object of java File class.
+		FC.createNewFile();
+
+		FW = new FileWriter(TestFile);
+		br = new BufferedWriter(FW);
+	}
+
 }

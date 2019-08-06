@@ -1,29 +1,33 @@
 package AmbrosiaEvents;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import AbrosiaPOMRepository.POMFunction;
-import org.apache.log4j.RollingFileAppender;
 import AbrosiaPOMRepository.POMObjectRepo;
 
 public class EventsNavigation extends POMFunction {
 	public static Logger log = Logger.getLogger(EventsNavigation.class.getClass());
+	/*
+	 * public static FileWriter write; public static BufferedWriter br;
+	 */
 
 	@BeforeTest
 	public void initlog4j() throws IOException {
 		Loadlog4j();
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void clickEvent() throws ParseException {
 		try {
 			POMFunction.Info("Events Navigation");
@@ -37,7 +41,7 @@ public class EventsNavigation extends POMFunction {
 		}
 	}
 
-	@Test
+	@Test(priority = 2)
 	public void SelectEvent() throws ParseException {
 		try {
 			WebElement AllTabList = waitforElementVisibile(POMObjectRepo.TabListMain);
@@ -56,8 +60,30 @@ public class EventsNavigation extends POMFunction {
 		}
 	}
 
-	@Test
-	public void GetRecordDetails() {
+	@AfterTest
+	public void GetRecordDetails() throws ParseException {
+		try {
+			createTxtFile();
+			WebElement ViewEventTable = FindElement(completeViewEvent);
+			List<WebElement> ViewElemetData = ViewEventTable.findElements(cellViewEvent);
+			log.debug("SSS : " + ViewElemetData.size());
+			for (WebElement webElement : ViewElemetData) {
+				String cellValue = webElement.getText();
+				if (cellValue.length() != 0) {
+					br.write(cellValue);
+					br.newLine();
+					log.debug(cellValue); // Logger
+				} else {
+					log.debug("****** Empty Field ******"); // Logger
+				}
 
+			}
+			br.close();
+			log.info("Event data collected in " + TestFile + " file");
+		} catch (Exception e) {
+			// TODO: handle exception
+			TakeScreenShot();
+			log.error(e);
+		}
 	}
 }
