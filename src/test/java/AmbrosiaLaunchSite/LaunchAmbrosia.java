@@ -36,44 +36,41 @@ public class LaunchAmbrosia extends POMFunction {
 			IEBrowser("IEDriverLoc");
 		}
 		log.info("Browser selected as : " + browser); // Logger
-		TakeScreenShot();
 	}
 
 	@Test(priority = 2)
 	public static void AmbrosiaLogin() throws IOException, InterruptedException, ParseException {
-		TakeScreenShot();
 		try {
-		LaunchApplication(GetPropValues("URL"));
-		log.info("URL passed as " + GetPropValues("URL")); // Logger
-		waitforElementVisibile(LoginUserName).sendKeys(GetPropValues("UserNameCredential"));
-		waitforElementVisibile(LoginPassword).sendKeys(GetPropValues("PasswordCredential"));
-		log.info("Credentials passed as " + GetPropValues("UserNameCredential") + "/"
-				+ GetPropValues("PasswordCredential")); // Logger
-		TakeScreenShot();
-		waitforElementVisibile(LoginSubmit).click();
-		waitforElementVisibile(Logo).click();
-		log.info("Clicked Submit"); // Logger
+			LaunchApplication(GetPropValues("URL"));
+			log.info("URL passed as " + GetPropValues("URL")); // Logger
+			waitforElementVisibile(LoginUserName).sendKeys(GetPropValues("UserNameCredential"));
+			waitforElementVisibile(LoginPassword).sendKeys(GetPropValues("PasswordCredential"));
+			log.info("Credentials passed as " + GetPropValues("UserNameCredential") + "/"
+					+ GetPropValues("PasswordCredential")); // Logger
+			waitforElementVisibile(LoginSubmit).click();
+			waitforElementVisibile(Logo).click();
+			log.info("Clicked Submit"); // Logger
 		} catch (Exception e) {
 			// TODO: handle exception
+			TakeScreenShot();
 			log.error(e);
 		}
-		TakeScreenShot();
 	}
 
 	@Test(priority = 3)
 	public static void LoginValidation() throws ParseException {
-		try { 
-		String ErrorMsg = dr.getPageSource();
-		if (ErrorMsg.contains("PASSWORD")) {
-			POMFunction.Error("Your credential is wrong. Test again with valid credential !!!");
-			dr.quit();
-		} else {
-			log.info("Your credential worked to Launch "); // Logger
-			TakeScreenShot();
-		}
-		log.debug("Login Validated"); // Logger
+		try {
+			String ErrorMsg = dr.getPageSource();
+			if (ErrorMsg.contains("PASSWORD")) {
+				POMFunction.Error("Your credential is wrong. Test again with valid credential !!!");
+				dr.quit();
+			} else {
+				log.info("Your credential worked to Launch "); // Logger
+			}
+			log.debug("Login Validated"); // Logger
 		} catch (Exception e) {
 			// TODO: handle exception
+			TakeScreenShot();
 			log.error(e);
 		}
 	}

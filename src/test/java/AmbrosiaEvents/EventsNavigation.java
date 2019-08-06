@@ -32,12 +32,13 @@ public class EventsNavigation extends POMFunction {
 			log.info("Events Menu clicked"); // Logger
 		} catch (Exception e) {
 			// TODO: handle exception
+			TakeScreenShot();
 			log.error(e);
 		}
 	}
 
 	@Test
-	public void SelectEvent() {
+	public void SelectEvent() throws ParseException {
 		try {
 			WebElement AllTabList = waitforElementVisibile(POMObjectRepo.TabListMain);
 			List<WebElement> ListMenu = AllTabList.findElements(ListTabMain);
@@ -50,6 +51,7 @@ public class EventsNavigation extends POMFunction {
 			log.info("Selected first sibiling record");
 		} catch (Exception e) {
 			// TODO: handle exception
+			TakeScreenShot();
 			log.error(e);
 		}
 	}
