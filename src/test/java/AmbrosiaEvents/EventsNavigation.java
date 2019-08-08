@@ -18,9 +18,6 @@ import AbrosiaPOMRepository.POMObjectRepo;
 
 public class EventsNavigation extends POMFunction {
 	public static Logger log = Logger.getLogger(EventsNavigation.class.getClass());
-	/*
-	 * public static FileWriter write; public static BufferedWriter br;
-	 */
 
 	@BeforeTest
 	public void initlog4j() throws IOException {
@@ -30,8 +27,8 @@ public class EventsNavigation extends POMFunction {
 	@Test(priority = 1)
 	public void clickEvent() throws ParseException {
 		try {
+			highlightElement(dr, waitforElementVisibile(AbrosiaPOMRepository.POMObjectRepo.clickEvent));
 			waitforElementVisibile(AbrosiaPOMRepository.POMObjectRepo.clickEvent).click();
-			TakeScreenShot();
 			log.info("Events Menu clicked"); // Logger
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -49,7 +46,9 @@ public class EventsNavigation extends POMFunction {
 			WebElement randLink = ListMenu.get(rand.nextInt(ListMenu.size()));
 			log.debug("Randomly Selected Record Name : " + randLink.getText()); // Logger
 			String classWeb = randLink.getAttribute("class");
+			highlightElement(dr, randLink);
 			randLink.click();
+			highlightElement(dr, waitforElementVisibile(SibListTabMain(classWeb)));
 			waitforElementVisibile(SibListTabMain(classWeb)).click();
 			log.info("Selected first sibiling record");
 		} catch (Exception e) {
@@ -67,6 +66,7 @@ public class EventsNavigation extends POMFunction {
 			List<WebElement> ViewElemetData = ViewEventTable.findElements(cellViewEvent);
 			log.debug("SSS : " + ViewElemetData.size());
 			for (WebElement webElement : ViewElemetData) {
+				highlightElement(dr, webElement);
 				String cellValue = webElement.getText();
 				if (cellValue.length() != 0) {
 					br.write(cellValue);

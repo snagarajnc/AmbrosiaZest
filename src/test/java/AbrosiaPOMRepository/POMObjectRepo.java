@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -38,7 +39,7 @@ public class POMObjectRepo {
 	public static String ReportNames;
 	public static By ReportLink = By.partialLinkText("REPORTS");
 	public static DateFormat ObjD = new SimpleDateFormat("dd-M-yyyy hh:mm:ss.SSSS");
-	public static String Today = ObjD.format(new Date());
+	public static String TodayDateFormat = ObjD.format(new Date());
 	public static long currentDate;
 	public static String TestFile;
 
@@ -53,14 +54,15 @@ public class POMObjectRepo {
 		By SibListTabMain = By.xpath("//*[contains(@class,'" + classWeb + "')]//li[1]");
 		return SibListTabMain;
 	}
-	
+
 	/* Get data from View event table */
-	public static By completeViewEvent = By.xpath("//div[contains(@class,'relative-block event-view ng-star-inserted')]");
-	public static By cellViewEvent = By.xpath("//div[contains(@class,'relative-block event-view ng-star-inserted')]//div[contains(@class,'col-xs-')]");
-	
-	
+	public static By completeViewEvent = By
+			.xpath("//div[contains(@class,'relative-block event-view ng-star-inserted')]");
+	public static By cellViewEvent = By.xpath(
+			"//div[contains(@class,'relative-block event-view ng-star-inserted')]//div[contains(@class,'col-xs-')]");
+
 	/* Create Txt File */
 	public static FileWriter FW;
 	public static BufferedWriter br;
-}
 
+}

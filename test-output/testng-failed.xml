@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="2" name="Failed suite [AmbrosiaSuite]" parallel="true">
-  <parameter name="ReportName" value="Music on Hold Report"/>
-  <parameter name="browser" value="chrome"/>
-  <test name="AmbrosiaTest #1(failed)" parallel="true">
-    <parameter name="ReportName" value="Music on Hold Report"/>
-    <parameter name="browser" value="chrome"/>
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="AbrosiaReports.Zest.LaunchAmbrosia">
+      <class name="AmbrosiaEvents.EventsNavigation">
         <methods>
-          <include name="BrowserSelection"/>
-        </methods>
-      </class> <!-- AbrosiaReports.Zest.LaunchAmbrosia -->
-      <class name="AmbrosiaEvents.ManipulateEvents">
-        <methods>
-          <include name="TakeEventsList"/>
+          <include name="GetRecordDetails"/>
           <include name="initlog4j"/>
+          <include name="SelectEvent"/>
+          <include name="clickEvent"/>
         </methods>
-      </class> <!-- AmbrosiaEvents.ManipulateEvents -->
+      </class> <!-- AmbrosiaEvents.EventsNavigation -->
     </classes>
-  </test> <!-- AmbrosiaTest #1(failed) -->
-</suite> <!-- Failed suite [AmbrosiaSuite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

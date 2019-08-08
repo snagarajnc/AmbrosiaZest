@@ -11,8 +11,10 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -91,6 +93,13 @@ public class POMFunction extends POMObjectRepo {
 		return exWait;
 	}
 
+	/* Element Highlighter */
+	public static Object highlightElement(WebDriver driver, WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		return js.executeScript(
+				"arguments[0].setAttribute('style', 'background: #99cc00; border: 2px solid #ffffff;');", element);
+	}
+
 	/* WebElement Wait for Element Visible */
 	public static WebElement waitforElementVisibile(By EleName) {
 		WebElement waitEle = (WebElement) getWait().until(ExpectedConditions.visibilityOfElementLocated(EleName));
@@ -102,13 +111,17 @@ public class POMFunction extends POMObjectRepo {
 		return dr.findElement(ByElementName);
 	}
 
+	/* Today's Date */
+	public static long Today() throws ParseException {
+		return currentDate = ObjD.parse(TodayDateFormat).getTime();
+	}
+
 	/* Take Screenshots */
 	public static void TakeScreenShot() throws ParseException {
-		currentDate = ObjD.parse(Today).getTime();
+
 		File sh = ((TakesScreenshot) dr).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(sh,
-					new File(ObjRepo().getProperty("ScreenshotLoc") + "Screenshot-" + currentDate + ".png"));
+			FileUtils.copyFile(sh, new File(ObjRepo().getProperty("ScreenshotLoc") + "Screenshot-" + Today() + ".png"));
 		} catch (IOException e) {
 			POMFunction.Error(e.getMessage());
 		}
@@ -120,9 +133,8 @@ public class POMFunction extends POMObjectRepo {
 	}
 
 	/* Create Txt file */
-	public static void createTxtFile() throws IOException {
-		TestFile = System.getProperty("user.dir") + ObjRepo().getProperty("TxtOutputLoc") + "\\TextOutput-"
-				+ currentDate + ".txt";
+	public static void createTxtFile() throws IOException, ParseException {
+		TestFile = ObjRepo().getProperty("TxtOutputLoc") + "EventDataCollections" + Today() + ".txt";
 		Error("EEEE : " + TestFile);
 		File FC = new File(TestFile);// Created object of java File class.
 		FC.createNewFile();

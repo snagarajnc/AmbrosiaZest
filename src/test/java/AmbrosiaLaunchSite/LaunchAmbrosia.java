@@ -43,10 +43,13 @@ public class LaunchAmbrosia extends POMFunction {
 		try {
 			LaunchApplication(GetPropValues("URL"));
 			log.info("URL passed as " + GetPropValues("URL")); // Logger
+			highlightElement(dr, waitforElementVisibile(LoginUserName));
 			waitforElementVisibile(LoginUserName).sendKeys(GetPropValues("UserNameCredential"));
+			highlightElement(dr, waitforElementVisibile(LoginPassword));
 			waitforElementVisibile(LoginPassword).sendKeys(GetPropValues("PasswordCredential"));
 			log.info("Credentials passed as " + GetPropValues("UserNameCredential") + "/"
 					+ GetPropValues("PasswordCredential")); // Logger
+			highlightElement(dr, waitforElementVisibile(LoginSubmit));
 			waitforElementVisibile(LoginSubmit).click();
 			waitforElementVisibile(Logo).click();
 			log.info("Clicked Submit"); // Logger

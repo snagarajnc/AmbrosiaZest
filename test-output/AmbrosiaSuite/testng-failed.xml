@@ -7,17 +7,19 @@
     <parameter name="ReportName" value="Music on Hold Report"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="AbrosiaReports.Zest.LaunchAmbrosia">
+      <class name="AmbrosiaEvents.EventsNavigation">
+        <methods>
+          <include name="GetRecordDetails"/>
+          <include name="initlog4j"/>
+          <include name="SelectEvent"/>
+          <include name="clickEvent"/>
+        </methods>
+      </class> <!-- AmbrosiaEvents.EventsNavigation -->
+      <class name="AmbrosiaLaunchSite.LaunchAmbrosia">
         <methods>
           <include name="BrowserSelection"/>
         </methods>
-      </class> <!-- AbrosiaReports.Zest.LaunchAmbrosia -->
-      <class name="AmbrosiaEvents.ManipulateEvents">
-        <methods>
-          <include name="TakeEventsList"/>
-          <include name="initlog4j"/>
-        </methods>
-      </class> <!-- AmbrosiaEvents.ManipulateEvents -->
+      </class> <!-- AmbrosiaLaunchSite.LaunchAmbrosia -->
     </classes>
   </test> <!-- AmbrosiaTest #1(failed) -->
 </suite> <!-- Failed suite [AmbrosiaSuite] -->
