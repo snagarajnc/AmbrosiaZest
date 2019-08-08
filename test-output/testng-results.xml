@@ -2,26 +2,26 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="AmbrosiaSuite" duration-ms="12801" started-at="2019-08-08T09:55:07Z" finished-at="2019-08-08T09:55:20Z">
+  <suite name="AmbrosiaSuite" duration-ms="13027" started-at="2019-08-08T10:17:39Z" finished-at="2019-08-08T10:17:52Z">
     <groups>
     </groups>
-    <test name="AmbrosiaTest #1" duration-ms="12801" started-at="2019-08-08T09:55:07Z" finished-at="2019-08-08T09:55:20Z">
+    <test name="AmbrosiaTest #1" duration-ms="13027" started-at="2019-08-08T10:17:39Z" finished-at="2019-08-08T10:17:52Z">
       <class name="AmbrosiaLaunchSite.LaunchAmbrosia">
-        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AmbrosiaLaunchSite.LaunchAmbrosia@31ef45e3]" name="LoginValidation" duration-ms="84" started-at="2019-08-08T15:25:10Z" finished-at="2019-08-08T15:25:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginValidation -->
-        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AmbrosiaLaunchSite.LaunchAmbrosia@31ef45e3]" name="AmbrosiaLogin" duration-ms="5064" started-at="2019-08-08T15:25:10Z" finished-at="2019-08-08T15:25:15Z">
+        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:AmbrosiaLaunchSite.LaunchAmbrosia@57baeedf]" name="AmbrosiaLogin" duration-ms="4148" started-at="2019-08-08T15:47:42Z" finished-at="2019-08-08T15:47:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AmbrosiaLogin -->
+        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:AmbrosiaLaunchSite.LaunchAmbrosia@57baeedf]" name="LoginValidation" duration-ms="64" started-at="2019-08-08T15:47:42Z" finished-at="2019-08-08T15:47:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginValidation -->
       </class> <!-- AmbrosiaLaunchSite.LaunchAmbrosia -->
       <class name="AmbrosiaEvents.EventsNavigation">
-        <test-method status="PASS" signature="initlog4j()[pri:0, instance:AmbrosiaEvents.EventsNavigation@42e26948]" name="initlog4j" is-config="true" duration-ms="38" started-at="2019-08-08T15:25:07Z" finished-at="2019-08-08T15:25:07Z">
+        <test-method status="PASS" signature="initlog4j()[pri:0, instance:AmbrosiaEvents.EventsNavigation@598067a5]" name="initlog4j" is-config="true" duration-ms="36" started-at="2019-08-08T15:47:39Z" finished-at="2019-08-08T15:47:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initlog4j -->
-        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AmbrosiaLaunchSite.LaunchAmbrosia@31ef45e3]" name="BrowserSelection" is-config="true" duration-ms="2787" started-at="2019-08-08T15:25:07Z" finished-at="2019-08-08T15:25:10Z">
+        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:AmbrosiaLaunchSite.LaunchAmbrosia@57baeedf]" name="BrowserSelection" is-config="true" duration-ms="2800" started-at="2019-08-08T15:47:39Z" finished-at="2019-08-08T15:47:42Z">
           <params>
             <param index="0">
               <value>
@@ -32,15 +32,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="clickEvent()[pri:0, instance:AmbrosiaEvents.EventsNavigation@42e26948]" name="clickEvent" duration-ms="6941" started-at="2019-08-08T15:25:10Z" finished-at="2019-08-08T15:25:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clickEvent -->
-        <test-method status="PASS" signature="SelectEvent()[pri:0, instance:AmbrosiaEvents.EventsNavigation@42e26948]" name="SelectEvent" duration-ms="8830" started-at="2019-08-08T15:25:10Z" finished-at="2019-08-08T15:25:19Z">
+        <test-method status="PASS" signature="SelectEvent()[pri:0, instance:AmbrosiaEvents.EventsNavigation@598067a5]" name="SelectEvent" duration-ms="8597" started-at="2019-08-08T15:47:42Z" finished-at="2019-08-08T15:47:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SelectEvent -->
-        <test-method status="PASS" signature="GetRecordDetails()[pri:0, instance:AmbrosiaEvents.EventsNavigation@42e26948]" name="GetRecordDetails" is-config="true" duration-ms="1115" started-at="2019-08-08T15:25:19Z" finished-at="2019-08-08T15:25:20Z">
+        <test-method status="PASS" signature="clickEvent()[pri:0, instance:AmbrosiaEvents.EventsNavigation@598067a5]" name="clickEvent" duration-ms="6092" started-at="2019-08-08T15:47:42Z" finished-at="2019-08-08T15:47:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickEvent -->
+        <test-method status="PASS" signature="GetRecordDetails()[pri:0, instance:AmbrosiaEvents.EventsNavigation@598067a5]" name="GetRecordDetails" is-config="true" duration-ms="1562" started-at="2019-08-08T15:47:50Z" finished-at="2019-08-08T15:47:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GetRecordDetails -->

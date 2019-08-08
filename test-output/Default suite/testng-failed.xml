@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="AmbrosiaEvents.ManipulateEvents">
+      <class name="AmbrosiaEvents.EventsNavigation">
         <methods>
-          <include name="Event1"/>
+          <include name="GetRecordDetails"/>
+          <include name="initlog4j"/>
+          <include name="SelectEvent"/>
+          <include name="clickEvent"/>
         </methods>
-      </class> <!-- AmbrosiaEvents.ManipulateEvents -->
+      </class> <!-- AmbrosiaEvents.EventsNavigation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,4 +1,4 @@
-package AbrosiaReports.Zest;
+package AbrosiaReports.Zest.base;
 
 /**
  * Hello world!

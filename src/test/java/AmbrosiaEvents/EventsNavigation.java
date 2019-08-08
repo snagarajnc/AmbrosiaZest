@@ -1,8 +1,5 @@
 package AmbrosiaEvents;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
@@ -13,8 +10,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import AbrosiaPOMRepository.POMFunction;
-import AbrosiaPOMRepository.POMObjectRepo;
+import AbrosiaReports.Zest.base.POMFunction;
+import AbrosiaReports.Zest.base.POMObjectRepo;
 
 public class EventsNavigation extends POMFunction {
 	public static Logger log = Logger.getLogger(EventsNavigation.class.getClass());
@@ -27,8 +24,8 @@ public class EventsNavigation extends POMFunction {
 	@Test(priority = 1)
 	public void clickEvent() throws ParseException {
 		try {
-			highlightElement(dr, waitforElementVisibile(AbrosiaPOMRepository.POMObjectRepo.clickEvent));
-			waitforElementVisibile(AbrosiaPOMRepository.POMObjectRepo.clickEvent).click();
+			highlightElement(dr, waitforElementVisibile(POMObjectRepo.clickEvent));
+			waitforElementVisibile(POMObjectRepo.clickEvent).click();
 			log.info("Events Menu clicked"); // Logger
 		} catch (Exception e) {
 			// TODO: handle exception
