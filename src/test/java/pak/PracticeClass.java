@@ -16,7 +16,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import AbrosiaPOMRepository.POMFunction;
+import AbrosiaReports.Zest.base.POMFunction;
 
 public class PracticeClass extends POMFunction {
 	public static Logger log = Logger.getLogger(PracticeClass.class.getClass());
