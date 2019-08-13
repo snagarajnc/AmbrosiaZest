@@ -20,6 +20,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -72,6 +73,10 @@ public class POMFunction extends POMObjectRepo {
 	}
 
 	public static void Error(String message) {
+		System.err.println("FAIL: " + message);
+	}
+
+	public static void Error(Exception message) {
 		System.err.println("FAIL: " + message);
 	}
 
@@ -141,6 +146,15 @@ public class POMFunction extends POMObjectRepo {
 
 		FW = new FileWriter(TestFile);
 		br = new BufferedWriter(FW);
+	}
+
+	/* Dropdown for Event List Pagination */
+	public static Select selectDropdown(WebElement element) {
+		return selectDropdown = new Select(element);
+	}
+
+	public static void alertCheck() {
+
 	}
 
 }

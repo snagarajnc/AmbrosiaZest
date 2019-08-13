@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -34,8 +35,16 @@ public class EventsNavigation extends POMFunction {
 		}
 	}
 
+	/*
+	 * @Test(priority = 2) public void ListPagination() throws ParseException {
+	 * waitforElementVisibile(paginationBy).click(); List<WebElement> ls =
+	 * dr.findElements(By.xpath("//div[contains(@class, 'wrap-dropdown-menu')]"));
+	 * for (WebElement webElement : ls) { POMFunction.Info(webElement.getText()); }
+	 * }
+	 */
+
 	@Test(priority = 2)
-	public void SelectEvent() throws ParseException {
+	public void selectEvenRandomly() throws ParseException {
 		try {
 			WebElement AllTabList = waitforElementVisibile(POMObjectRepo.TabListMain);
 			List<WebElement> ListMenu = AllTabList.findElements(ListTabMain);
@@ -69,8 +78,9 @@ public class EventsNavigation extends POMFunction {
 					br.write(cellValue);
 					br.newLine();
 					log.debug(cellValue); // Logger
-				} else {
-					log.debug("****** Empty Field ******"); // Logger
+				} else if (webElement.getAttribute("class").contains(alertLevelAttrib)) {
+
+					log.debug(" ################################ " + webElement.getAttribute("title")); // Logger
 				}
 			}
 			br.close();

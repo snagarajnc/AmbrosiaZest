@@ -1,68 +1,90 @@
 package pak;
 
-import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import AbrosiaReports.Zest.base.POMFunction;
+import AbrosiaReports.Zest.base.POMObjectRepo;
+import AmbrosiaLaunchSite.LaunchAmbrosia;
 
-public class PracticeClass extends POMFunction {
-	public static Logger log = Logger.getLogger(PracticeClass.class.getClass());
+public class PracticeClass extends LaunchAmbrosia {
+
 	public static void main(String[] args) throws IOException, InterruptedException, ParseException {
-		Loadlog4j();
-		System.out.println("DDD : " + log);
-
-		System.setProperty("webdriver.gecko.driver",
-				System.getProperty("user.dir") + ObjRepo().getProperty("GeckoDriverLoc"));
-		dr = new FirefoxDriver();
-		log.info("Browser Launched");
-		TakeScreenShot();
-		dr.get("https://www.google.com/");
-		log.debug("URL Passed");
-		By SignIn = By.xpath("//*[@id='gb_70']");
-
-		WebElement wb = POMFunction.FindElement(SignIn);
-		JavascriptExecutor js = (JavascriptExecutor) dr;
-//		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", wb);
-		highlightElement(dr,wb);
-		wb.click();
-//		highLight(wb);
-		log.debug("Sign In clicked");
-		TakeScreenShot();
+		System.setProperty("webdriver.chrome.driver",
+				System.getProperty("user.dir") + ObjRepo().getProperty("ChromeDriverLoc"));
+		dr = new ChromeDriver();
+		dr.get("https://release.ambrosia.lab.nectarvoip.com/dashboardui/signin");
+		AmbrosiaLogin();
+		clickEvent();
+		selectEvenRandomly();
+		GetRecordDetails();
 	}
 
-	public static void TakeScreenShot() throws ParseException {
-		DateFormat ObjD = new SimpleDateFormat("dd-M-yyyy hh:mm:ss.SSSS");
-		String Today = ObjD.format(new Date());
-		long date = ObjD.parse(Today).getTime();
-		File sh = ((TakesScreenshot) dr).getScreenshotAs(OutputType.FILE);
+	public static void clickEvent() throws ParseException {
 		try {
-			FileUtils.copyFile(sh, new File(ObjRepo().getProperty("ScreenshotLoc") + "Screenshot-" + date + ".png"));
-		}
-
-		catch (IOException e) {
-			POMFunction.Error(e.getMessage());
+			highlightElement(dr, waitforElementVisibile(POMObjectRepo.clickEvent));
+			waitforElementVisibile(POMObjectRepo.clickEvent).click();
+		} catch (Exception e) {
+			POMFunction.Error(e);
 		}
 	}
 
-	public static void highLight(WebElement ele) {
-		JavascriptExecutor js = (JavascriptExecutor) dr;
-		// use executeScript() method and pass the arguments
-		// Here i pass values based on css style. Yellow background color with solid red
-		// color border.
-		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", ele);
-
+	public static void selectEvenRandomly() throws ParseException {
+		try {
+			WebElement AllTabList = waitforElementVisibile(POMObjectRepo.TabListMain);
+			List<WebElement> ListMenu = AllTabList.findElements(ListTabMain);
+			POMFunction.Info(ListMenu.size());
+			WebElement randLink = ListMenu.get(rand.nextInt(ListMenu.size()));
+			POMFunction.Info(randLink.getText());
+			String classWeb = randLink.getAttribute("class");
+			highlightElement(dr, randLink);
+			randLink.click();
+			highlightElement(dr, waitforElementVisibile(SibListTabMain(classWeb)));
+			waitforElementVisibile(SibListTabMain(classWeb)).click();
+			POMFunction.Info("Selected first sibiling record");
+		} catch (Exception e) {
+			// TODO: handle exception
+			TakeScreenShot();
+			POMFunction.Error(e);
+		}
 	}
+
+	public static void GetRecordDetails() throws ParseException {
+		try {
+			createTxtFile();
+			WebElement ViewEventTable = FindElement(completeViewEvent);
+			List<WebElement> ViewElemetData = ViewEventTable.findElements(cellViewEvent);
+			POMFunction.Info(ViewElemetData.size());
+			for (WebElement webElement : ViewElemetData) {
+				highlightElement(dr, webElement);
+				String cellValue = webElement.getText();
+				if (cellValue.length() != 0) {
+					br.write(cellValue);
+					br.newLine();
+					POMFunction.Info(cellValue);
+				} else if (webElement.getAttribute("class").contains(alertLevelAttrib)) {
+					POMFunction.Info(webElement.getAttribute("title"));
+				}
+			}
+			br.close();
+			log.info("Event data collected in " + TestFile + " file");
+		} catch (Exception e) {
+			// TODO: handle exception
+			TakeScreenShot();
+			POMFunction.Error(e);
+		}
+	}
+
+	/*
+	 * public static void Dropdown() { highlightElement(dr,
+	 * waitforElementVisibile(By.xpath("//*[normalize-space()='Show' and @class]")))
+	 * ;
+	 * waitforElementVisibile(By.xpath("//*[normalize-space()='Show' and @class]")).
+	 * click(); }
+	 */
 }
