@@ -7,19 +7,18 @@
     <parameter name="ReportName" value="Music on Hold Report"/>
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="AmbrosiaEvents.EventsNavigation">
-        <methods>
-          <include name="GetRecordDetails"/>
-          <include name="initlog4j"/>
-          <include name="SelectEvent"/>
-          <include name="clickEvent"/>
-        </methods>
-      </class> <!-- AmbrosiaEvents.EventsNavigation -->
       <class name="AmbrosiaLaunchSite.LaunchAmbrosia">
         <methods>
           <include name="BrowserSelection"/>
         </methods>
       </class> <!-- AmbrosiaLaunchSite.LaunchAmbrosia -->
+      <class name="AmbrosiaEvents.EventsNavigation">
+        <methods>
+          <include name="ListPagination"/>
+          <include name="GetRecordDetails"/>
+          <include name="initlog4j"/>
+        </methods>
+      </class> <!-- AmbrosiaEvents.EventsNavigation -->
     </classes>
   </test> <!-- AmbrosiaTest #1(failed) -->
 </suite> <!-- Failed suite [AmbrosiaSuite] -->

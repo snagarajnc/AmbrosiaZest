@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -51,10 +50,10 @@ public class POMObjectRepo {
 	public static By ListTabMain = By.xpath("//p-accordiontab[contains(@class, 'custom-tab ng-tns')]");
 
 	/* Pagination Dropbox selection */
-	public static By paginationBy =  By.xpath("//div[contains(@class,'ng-tns-c39-16 ng-star-inserted')]");
+	public static By paginationBy = By.xpath("//div[contains(@class,'ng-tns-c39-16 ng-star-inserted')]");
 	public static Select selectDropdown;
 //	public static ;
-	
+
 	/* Ignore for reusability */
 	public static By SibListTabMain(String classWeb) {
 		By SibListTabMain = By.xpath("//*[contains(@class,'" + classWeb + "')]//li[1]");
@@ -70,7 +69,8 @@ public class POMObjectRepo {
 	/* Create Txt File */
 	public static FileWriter FW;
 	public static BufferedWriter br;
-	
-	public static String alertLevelAttrib = "marker marker-circle marker-error";
 
+	/* Get Alert Level */
+	public static By alertLevelAttrib = By
+			.xpath("//*[@class='col-xs-3 col-lg-3']//div[contains(@class,'marker marker-circle marker-')]");
 }

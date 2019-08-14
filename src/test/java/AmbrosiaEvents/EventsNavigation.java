@@ -5,7 +5,6 @@ import java.text.ParseException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -35,20 +34,12 @@ public class EventsNavigation extends POMFunction {
 		}
 	}
 
-	/*
-	 * @Test(priority = 2) public void ListPagination() throws ParseException {
-	 * waitforElementVisibile(paginationBy).click(); List<WebElement> ls =
-	 * dr.findElements(By.xpath("//div[contains(@class, 'wrap-dropdown-menu')]"));
-	 * for (WebElement webElement : ls) { POMFunction.Info(webElement.getText()); }
-	 * }
-	 */
-
 	@Test(priority = 2)
-	public void selectEvenRandomly() throws ParseException {
+	public void selectEventRandomly() throws ParseException {
 		try {
 			WebElement AllTabList = waitforElementVisibile(POMObjectRepo.TabListMain);
 			List<WebElement> ListMenu = AllTabList.findElements(ListTabMain);
-			log.debug("Size of ElementsList #1 : " + ListMenu.size()); // Logger
+			log.debug("Total ElementsList : " + ListMenu.size()); // Logger
 			WebElement randLink = ListMenu.get(rand.nextInt(ListMenu.size()));
 			log.debug("Randomly Selected Record Name : " + randLink.getText()); // Logger
 			String classWeb = randLink.getAttribute("class");
@@ -65,26 +56,32 @@ public class EventsNavigation extends POMFunction {
 	}
 
 	@AfterTest
-	public void GetRecordDetails() throws ParseException {
+	public void collectEventDetails() throws ParseException {
 		try {
 			createTxtFile();
 			WebElement ViewEventTable = FindElement(completeViewEvent);
 			List<WebElement> ViewElemetData = ViewEventTable.findElements(cellViewEvent);
-			log.debug("SSS : " + ViewElemetData.size());
-			for (WebElement webElement : ViewElemetData) {
-				highlightElement(dr, webElement);
-				String cellValue = webElement.getText();
-				if (cellValue.length() != 0) {
-					br.write(cellValue);
-					br.newLine();
-					log.debug(cellValue); // Logger
-				} else if (webElement.getAttribute("class").contains(alertLevelAttrib)) {
-
-					log.debug(" ################################ " + webElement.getAttribute("title")); // Logger
+			int Lsize = ViewElemetData.size();
+			log.debug("Sub Element Count : " + Lsize);
+			if (Lsize != 0) {
+				for (WebElement webElement : ViewElemetData) {
+					highlightElement(dr, webElement);
+					String cellValue = webElement.getText();
+					if (cellValue.length() != 0) {
+						br.write(cellValue);
+						br.newLine();
+						log.debug(cellValue); // Logger
+					} else if (waitforElementVisibile(alertLevelAttrib).isDisplayed()) {
+						String Val = waitforElementVisibile(alertLevelAttrib).getAttribute("title");
+						int result = Integer.parseInt(Val);
+						log.debug(alertCheck(result));
+					}
 				}
+				log.info("Event data collected successfully in " + TestFile);
+			} else {
+				br.close();
+				log.info("Browser closed because of Lsize = " + Lsize);
 			}
-			br.close();
-			log.info("Event data collected in " + TestFile + " file");
 		} catch (Exception e) {
 			// TODO: handle exception
 			TakeScreenShot();

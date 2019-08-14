@@ -153,8 +153,38 @@ public class POMFunction extends POMObjectRepo {
 		return selectDropdown = new Select(element);
 	}
 
-	public static void alertCheck() {
-
+	/* Select Alert Name using Alert Level */
+	public static String alertCheck(int alert) throws IOException {
+		if (alert == 5) {
+			String alertLevel = "Critical";
+			br.write(alert);
+			br.newLine();
+			return alertLevel;
+		} else if (alert == 4) {
+			String alertLevel = "Major";
+			br.write(alertLevel);
+			br.newLine();
+			return alertLevel;
+		} else if (alert == 3) {
+			String alertLevel = "Minor";
+			br.write(alertLevel);
+			br.newLine();
+			return alertLevel;
+		} else if (alert == 2) {
+			String alertLevel = "Warning";
+			br.write(alertLevel);
+			br.newLine();
+			return alertLevel;
+		} else if (alert == 1) {
+			String alertLevel = "Good";
+			br.write(alertLevel);
+			br.newLine();
+			return alertLevel;
+		} else {
+			String alertLevel = "No Activity";
+			br.write(alertLevel);
+			br.newLine();
+			return alertLevel;
+		}
 	}
-
 }

@@ -5,9 +5,9 @@
     <classes>
       <class name="AmbrosiaEvents.EventsNavigation">
         <methods>
+          <include name="selectEvenRandomly"/>
           <include name="GetRecordDetails"/>
           <include name="initlog4j"/>
-          <include name="SelectEvent"/>
           <include name="clickEvent"/>
         </methods>
       </class> <!-- AmbrosiaEvents.EventsNavigation -->

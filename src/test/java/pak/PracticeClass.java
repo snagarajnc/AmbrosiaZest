@@ -56,7 +56,6 @@ public class PracticeClass extends LaunchAmbrosia {
 
 	public static void GetRecordDetails() throws ParseException {
 		try {
-			createTxtFile();
 			WebElement ViewEventTable = FindElement(completeViewEvent);
 			List<WebElement> ViewElemetData = ViewEventTable.findElements(cellViewEvent);
 			POMFunction.Info(ViewElemetData.size());
@@ -64,14 +63,13 @@ public class PracticeClass extends LaunchAmbrosia {
 				highlightElement(dr, webElement);
 				String cellValue = webElement.getText();
 				if (cellValue.length() != 0) {
-					br.write(cellValue);
-					br.newLine();
 					POMFunction.Info(cellValue);
-				} else if (webElement.getAttribute("class").contains(alertLevelAttrib)) {
-					POMFunction.Info(webElement.getAttribute("title"));
+				} else if (waitforElementVisibile(alertLevelAttrib).isDisplayed()) {
+					String Val = waitforElementVisibile(alertLevelAttrib).getAttribute("title");
+					int result = Integer.parseInt(Val);
+					alertCheck(result);
 				}
 			}
-			br.close();
 			log.info("Event data collected in " + TestFile + " file");
 		} catch (Exception e) {
 			// TODO: handle exception
