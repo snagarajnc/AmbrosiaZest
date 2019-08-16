@@ -72,12 +72,16 @@ public class POMFunction extends POMObjectRepo {
 		System.out.println("PASS: " + message);
 	}
 
-	public static void Error(String message) {
-		System.err.println("FAIL: " + message);
+	public static void Error(String string) {
+		System.err.println("FAIL: " + string);
 	}
 
-	public static void Error(Exception message) {
-		System.err.println("FAIL: " + message);
+	public static void Error(Exception exception) {
+		System.err.println("FAIL: " + exception);
+	}
+
+	public static void Exception(Object object) {
+		System.err.println("FAIL: " + object);
 	}
 
 	public static void Error(int message) {
@@ -141,8 +145,9 @@ public class POMFunction extends POMObjectRepo {
 	public static void createTxtFile() throws IOException, ParseException {
 		TestFile = ObjRepo().getProperty("TxtOutputLoc") + "EventDataCollections" + Today() + ".txt";
 		Error("EEEE : " + TestFile);
-		File FC = new File(TestFile);// Created object of java File class.
-		FC.createNewFile();
+
+		File file = new File(TestFile); // Created object of java File class.
+		file.createNewFile();
 
 		FW = new FileWriter(TestFile);
 		br = new BufferedWriter(FW);
@@ -157,33 +162,21 @@ public class POMFunction extends POMObjectRepo {
 	public static String alertCheck(int alert) throws IOException {
 		if (alert == 5) {
 			String alertLevel = "Critical";
-			br.write(alert);
-			br.newLine();
 			return alertLevel;
 		} else if (alert == 4) {
 			String alertLevel = "Major";
-			br.write(alertLevel);
-			br.newLine();
 			return alertLevel;
 		} else if (alert == 3) {
 			String alertLevel = "Minor";
-			br.write(alertLevel);
-			br.newLine();
 			return alertLevel;
 		} else if (alert == 2) {
 			String alertLevel = "Warning";
-			br.write(alertLevel);
-			br.newLine();
 			return alertLevel;
 		} else if (alert == 1) {
 			String alertLevel = "Good";
-			br.write(alertLevel);
-			br.newLine();
 			return alertLevel;
 		} else {
 			String alertLevel = "No Activity";
-			br.write(alertLevel);
-			br.newLine();
 			return alertLevel;
 		}
 	}

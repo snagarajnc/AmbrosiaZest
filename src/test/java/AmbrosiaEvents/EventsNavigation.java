@@ -68,18 +68,21 @@ public class EventsNavigation extends POMFunction {
 					highlightElement(dr, webElement);
 					String cellValue = webElement.getText();
 					if (cellValue.length() != 0) {
-						br.write(cellValue);
-						br.newLine();
+						this.br.write(cellValue);
+						this.br.newLine();
 						log.debug(cellValue); // Logger
 					} else if (waitforElementVisibile(alertLevelAttrib).isDisplayed()) {
 						String Val = waitforElementVisibile(alertLevelAttrib).getAttribute("title");
 						int result = Integer.parseInt(Val);
-						log.debug(alertCheck(result));
+						String value = alertCheck(result);
+						this.br.write(value);
+						this.br.newLine();
+						log.debug(value);
 					}
 				}
+				br.close();
 				log.info("Event data collected successfully in " + TestFile);
 			} else {
-				br.close();
 				log.info("Browser closed because of Lsize = " + Lsize);
 			}
 		} catch (Exception e) {

@@ -41,7 +41,6 @@ public class POMObjectRepo {
 	public static DateFormat ObjD = new SimpleDateFormat("dd-M-yyyy hh:mm:ss.SSSS");
 	public static String TodayDateFormat = ObjD.format(new Date());
 	public static long currentDate;
-	public static String TestFile;
 
 	// Events
 	public static By clickEvent = By.linkText("EVENTS");
@@ -69,6 +68,7 @@ public class POMObjectRepo {
 	/* Create Txt File */
 	public static FileWriter FW;
 	public static BufferedWriter br;
+	public static String TestFile;
 
 	/* Get Alert Level */
 	public static By alertLevelAttrib = By
