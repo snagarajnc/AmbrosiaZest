@@ -11,15 +11,20 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import AbrosiaReports.Zest.base.POMFunction;
-import AbrosiaReports.Zest.base.POMObjectRepo;
-import AmbrosiaLaunchSite.LaunchAmbrosia;
+import com.abrosia.zest.objectrepository.POMObjectRepo;
+import com.abrosia.zest.selenium.actions.POMFunction;
+import com.abrosia.zest.testcases.TC001_LaunchAmbrosia;
+import com.abrosia.zest.utils.AmbrosiaUtils;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
-public class PracticeClass extends LaunchAmbrosia {
-	public static Logger logg = Logger.getLogger(LaunchAmbrosia.class.getClass());
+public class PracticeClass extends TC001_LaunchAmbrosia {
+	public static Logger logg = Logger.getLogger(TC001_LaunchAmbrosia.class.getClass());
 	public static File FCC;
 	public static BufferedWriter brr;
 	public static FileWriter FWW;
+	public static ExtentReports extent;
+	public static ExtentTest logger;
 
 	public static void main(String[] args) throws InterruptedException, ParseException, IOException {
 		Loadlog4j();
@@ -32,7 +37,8 @@ public class PracticeClass extends LaunchAmbrosia {
 
 	public static void createSampleFile() throws IOException, ParseException {
 		try {
-			TestFile = ObjRepo().getProperty("TxtOutputLoc") + "PracticeClass" + Today() + ".txt";
+//			TestFile = ObjRepo().getProperty("TxtOutputLoc") + "PracticeClass" + Today() + ".txt";
+			TestFile = AmbrosiaUtils.CurrentReportLocation() + "\\" + "PracticeClass" + ".txt";
 			FCC = new File(TestFile);// Created object of java File class.
 			FCC.createNewFile();
 

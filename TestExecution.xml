@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="AmbrosiaSuite" parallel="true" verbose="2">
+<suite name="AmbrosiaSuite" parallel="false" verbose="2">
 
-	<test name="AmbrosiaTest #1">
+	<test name="--------------- TestCase #1 --------------------"
+		group-by-instances="true" verbose="2">
 		<parameter name="browser" value="chrome" />
-		<parameter name="ReportName" value="Music on Hold Report" />
 		<classes>
-			<class name="AmbrosiaLaunchSite.LaunchAmbrosia" />
-			<class name="AmbrosiaEvents.EventsNavigation" />
+			<class name="com.abrosia.zest.base.BaseTest" />
+			<class name="com.abrosia.zest.testcases.TC001_LaunchAmbrosia" />
+			<class name="com.abrosia.zest.testcases.TC002_EventNavigation" />
 		</classes>
 	</test>
 </suite>

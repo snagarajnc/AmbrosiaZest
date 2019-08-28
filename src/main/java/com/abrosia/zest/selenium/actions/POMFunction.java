@@ -1,4 +1,4 @@
-package AbrosiaReports.Zest.base;
+package com.abrosia.zest.selenium.actions;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -24,7 +25,22 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.abrosia.zest.objectrepository.POMObjectRepo;
+import com.abrosia.zest.utils.AmbrosiaUtils;
+import com.relevantcodes.extentreports.model.Test;
+
 public class POMFunction extends POMObjectRepo {
+
+	public static Logger log = Logger.getLogger(POMFunction.class.getClass());
+
+	public static void exeLogg() throws IOException {
+		Loadlog4j();
+	}
+
+	public static void browserQuit() {
+		dr.quit();
+	}
+
 	public static Properties ObjRepo() throws IOException {
 		FileReader ff = new FileReader(System.getProperty("user.dir") + "/utilsPorperties/ObjectRepoProp.properties");
 		Properties pp = new Properties();
@@ -120,17 +136,13 @@ public class POMFunction extends POMObjectRepo {
 		return dr.findElement(ByElementName);
 	}
 
-	/* Today's Date */
-	public static long Today() throws ParseException {
-		return currentDate = ObjD.parse(TodayDateFormat).getTime();
-	}
-
 	/* Take Screenshots */
 	public static void TakeScreenShot() throws ParseException {
 
 		File sh = ((TakesScreenshot) dr).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(sh, new File(ObjRepo().getProperty("ScreenshotLoc") + "Screenshot-" + Today() + ".png"));
+			FileUtils.copyFile(sh,
+					new File(AmbrosiaUtils.CurrentReportLocation() + "\\Screenshots\\" + "Screenshot" + ".png"));
 		} catch (IOException e) {
 			POMFunction.Error(e.getMessage());
 		}
@@ -143,8 +155,9 @@ public class POMFunction extends POMObjectRepo {
 
 	/* Create Txt file */
 	public static void createTxtFile() throws IOException, ParseException {
-		TestFile = ObjRepo().getProperty("TxtOutputLoc") + "EventDataCollections" + Today() + ".txt";
-		Error("EEEE : " + TestFile);
+		TestFile = AmbrosiaUtils.CurrentReportLocation() + "\\" + "EventDataCollections" + ".txt";
+//		Error("EEEE : " + TestFile);
+		log.info("Data Collectioned in "+TestFile);
 
 		File file = new File(TestFile); // Created object of java File class.
 		file.createNewFile();

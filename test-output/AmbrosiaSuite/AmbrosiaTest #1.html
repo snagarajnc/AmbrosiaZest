@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>AmbrosiaTest #1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/4</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Aug 16 18:42:42 IST 2019</td>
+<td>Started on:</td><td>Fri Aug 23 15:30:02 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>11 seconds (11348 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (169 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,33 +67,109 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='AmbrosiaLaunchSite.LaunchAmbrosia.AmbrosiaLogin()'><b>AmbrosiaLogin</b><br>Test class: AmbrosiaLaunchSite.LaunchAmbrosia</td>
-<td></td>
-<td>4</td>
-<td>AmbrosiaLaunchSite.LaunchAmbrosia@4667ae56</td></tr>
+<td title='pak.ExtentReportClass.BrowserSelection()'><b>BrowserSelection</b><br>Test class: pak.ExtentReportClass</td>
+<td><div><pre>org.testng.TestNGException: 
+Parameter &apos;browser&apos; is required by @Configuration on method BrowserSelection but has not been marked @Optional or defined
+in D:\Users\snagaraj\eclipse-workspace\Zest\PracticeExecution.xml
+	at org.testng.internal.Parameters.createParameters(Parameters.java:155)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:355)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:86)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:199)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace418304857", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace418304857'><pre>org.testng.TestNGException: 
+Parameter &apos;browser&apos; is required by @Configuration on method BrowserSelection but has not been marked @Optional or defined
+in D:\Users\snagaraj\eclipse-workspace\Zest\PracticeExecution.xml
+	at org.testng.internal.Parameters.createParameters(Parameters.java:155)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:355)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:86)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:199)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:641)
+	at org.testng.TestRunner.run(TestRunner.java:609)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='AmbrosiaLaunchSite.LaunchAmbrosia.LoginValidation()'><b>LoginValidation</b><br>Test class: AmbrosiaLaunchSite.LaunchAmbrosia</td>
+<td title='pak.ExtentReportClass.beforeTest()'><b>beforeTest</b><br>Test class: pak.ExtentReportClass</td>
 <td></td>
-<td>2</td>
-<td>AmbrosiaLaunchSite.LaunchAmbrosia@4667ae56</td></tr>
+<td>0</td>
+<td>null</td></tr>
 <tr>
-<td title='AmbrosiaEvents.EventsNavigation.clickEvent()'><b>clickEvent</b><br>Test class: AmbrosiaEvents.EventsNavigation</td>
+<td title='pak.ExtentReportClass.afterTest()'><b>afterTest</b><br>Test class: pak.ExtentReportClass</td>
 <td></td>
-<td>6</td>
-<td>AmbrosiaEvents.EventsNavigation@271053e1</td></tr>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='AmbrosiaEvents.EventsNavigation.selectEventRandomly()'><b>selectEventRandomly</b><br>Test class: AmbrosiaEvents.EventsNavigation</td>
+<td title='pak.ExtentReportClass.AmbrosiaLogin()'><b>AmbrosiaLogin</b><br>Test class: pak.ExtentReportClass</td>
 <td></td>
-<td>8</td>
-<td>AmbrosiaEvents.EventsNavigation@271053e1</td></tr>
+<td>0</td>
+<td>pak.ExtentReportClass@3abbfa04</td></tr>
+<tr>
+<td title='pak.ExtentReportClass.Launch()'><b>Launch</b><br>Test class: pak.ExtentReportClass</td>
+<td></td>
+<td>0</td>
+<td>pak.ExtentReportClass@3abbfa04</td></tr>
+<tr>
+<td title='pak.ExtentReportClass.Loadlog4j()'><b>Loadlog4j</b><br>Test class: pak.ExtentReportClass</td>
+<td></td>
+<td>0</td>
+<td>pak.ExtentReportClass@3abbfa04</td></tr>
+<tr>
+<td title='pak.ExtentReportClass.LoginValidation()'><b>LoginValidation</b><br>Test class: pak.ExtentReportClass</td>
+<td></td>
+<td>0</td>
+<td>pak.ExtentReportClass@3abbfa04</td></tr>
 </table><p>
 </body>
 </html>

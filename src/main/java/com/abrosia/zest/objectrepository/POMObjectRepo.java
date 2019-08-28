@@ -1,6 +1,7 @@
-package AbrosiaReports.Zest.base;
+package com.abrosia.zest.objectrepository;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -24,9 +25,9 @@ public class POMObjectRepo {
 	public static WebElement ReportsX;
 
 	public static WebDriver dr;
-	public static By LoginUserName = By.name("login");
-	public static By LoginPassword = By.name("password");
-	public static By LoginSubmit = By.className("dui-login-submit");
+	public static final By LoginUserName = By.name("login");
+	public static final By LoginPassword = By.name("password");
+	public static final By LoginSubmit = By.className("dui-login-submit");
 	public static By Logo = By.className("dui-login-logo");
 	public static By Reports = By.className("dui-header-nav-item dui-active ng-star-inserted");
 	public static By TableBody = By.id("rdDataTableDiv-HomeReportTable");
@@ -39,8 +40,9 @@ public class POMObjectRepo {
 	public static String ReportNames;
 	public static By ReportLink = By.partialLinkText("REPORTS");
 	public static DateFormat ObjD = new SimpleDateFormat("dd-M-yyyy hh:mm:ss.SSSS");
-	public static String TodayDateFormat = ObjD.format(new Date());
-	public static long currentDate;
+
+
+	
 
 	// Events
 	public static By clickEvent = By.linkText("EVENTS");
@@ -73,4 +75,23 @@ public class POMObjectRepo {
 	/* Get Alert Level */
 	public static By alertLevelAttrib = By
 			.xpath("//*[@class='col-xs-3 col-lg-3']//div[contains(@class,'marker marker-circle marker-')]");
+	
+	
+//	********************************************* NEW FRAMEWORK IMPLEMENTATION ********************************************* 
+	public static DateFormat dateFormat = new SimpleDateFormat("dd-M-yyyy hh:mm:ss:SSSS");
+	public static String TodayDateFormat = dateFormat.format(new Date());
+	public static long currentDate;
+	public static String currentRunReportPath;
+	public static File file;
+	
+	
+	public static By BlankDesc = By.xpath("//*[contains(@class,'col-xs-3 col-lg-3')]");
+	
+	
+	
+	
+	
+	
+	
+	
 }

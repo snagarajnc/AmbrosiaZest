@@ -1,4 +1,4 @@
-package AmbrosiaLaunchSite;
+package com.abrosia.zest.testcases;
 
 import java.awt.AWTException;
 import java.io.IOException;
@@ -12,17 +12,18 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import AbrosiaReports.Zest.base.POMFunction;
+import com.abrosia.zest.selenium.actions.POMFunction;
+import com.abrosia.zest.utils.AmbrosiaUtils;
 
-public class LaunchAmbrosia extends POMFunction {
+public class TC001_LaunchAmbrosia extends POMFunction {
 
-	public static Logger log = Logger.getLogger(LaunchAmbrosia.class.getClass());
+	public static Logger log = Logger.getLogger(TC001_LaunchAmbrosia.class.getClass());
 
 	@Parameters("browser")
 	@BeforeTest
 	public void BrowserSelection(String browser) throws AWTException, IOException, ParseException {
 		Loadlog4j();
-
+		log.info("Report FOlder Path1 : " + AmbrosiaUtils.CurrentReportLocation());
 		if (browser.equalsIgnoreCase("chrome")) {
 			ChromeBrowser("ChromeDriverLoc");
 		}
@@ -37,11 +38,11 @@ public class LaunchAmbrosia extends POMFunction {
 		log.info("Browser selected as : " + browser); // Logger
 	}
 
-	@Test(priority = 2)
+	@Test
 	public static void AmbrosiaLogin() throws IOException, InterruptedException, ParseException {
 		try {
 			LaunchApplication(GetPropValues("URL"));
-			log.info("URL passed as " + GetPropValues("URL")); // Logger
+			log.info("URL : " + GetPropValues("URL")); // Logger
 			highlightElement(dr, waitforElementVisibile(LoginUserName));
 			waitforElementVisibile(LoginUserName).sendKeys(GetPropValues("UserNameCredential"));
 			highlightElement(dr, waitforElementVisibile(LoginPassword));
@@ -59,7 +60,7 @@ public class LaunchAmbrosia extends POMFunction {
 		}
 	}
 
-	@Test(priority = 3)
+	@Test
 	public static void LoginValidation() throws ParseException {
 		try {
 			String ErrorMsg = dr.getPageSource();
@@ -69,7 +70,6 @@ public class LaunchAmbrosia extends POMFunction {
 			} else {
 				log.info("Your credential worked to Launch "); // Logger
 			}
-			log.debug("Login Validated"); // Logger
 		} catch (Exception e) {
 			// TODO: handle exception
 			TakeScreenShot();

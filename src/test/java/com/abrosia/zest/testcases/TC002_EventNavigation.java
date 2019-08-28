@@ -1,4 +1,4 @@
-package AmbrosiaEvents;
+package com.abrosia.zest.testcases;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -10,18 +10,18 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import AbrosiaReports.Zest.base.POMFunction;
-import AbrosiaReports.Zest.base.POMObjectRepo;
+import com.abrosia.zest.objectrepository.POMObjectRepo;
+import com.abrosia.zest.selenium.actions.POMFunction;
 
-public class EventsNavigation extends POMFunction {
-	public static Logger log = Logger.getLogger(EventsNavigation.class.getClass());
+public class TC002_EventNavigation extends POMFunction {
+	public static Logger log = Logger.getLogger(TC002_EventNavigation.class.getClass());
 
 	@BeforeTest
 	public void initlog4j() throws IOException {
 		Loadlog4j();
 	}
 
-	@Test(priority = 1)
+	@Test
 	public void clickEvent() throws ParseException {
 		try {
 			highlightElement(dr, waitforElementVisibile(POMObjectRepo.clickEvent));
@@ -34,7 +34,7 @@ public class EventsNavigation extends POMFunction {
 		}
 	}
 
-	@Test(priority = 2)
+	@Test
 	public void selectEventRandomly() throws ParseException {
 		try {
 			WebElement AllTabList = waitforElementVisibile(POMObjectRepo.TabListMain);
@@ -58,31 +58,33 @@ public class EventsNavigation extends POMFunction {
 	@AfterTest
 	public void collectEventDetails() throws ParseException {
 		try {
-			createTxtFile();
+//			createTxtFile();
 			WebElement ViewEventTable = FindElement(completeViewEvent);
 			List<WebElement> ViewElemetData = ViewEventTable.findElements(cellViewEvent);
 			int Lsize = ViewElemetData.size();
 			log.debug("Sub Element Count : " + Lsize);
 			if (Lsize != 0) {
+				createTxtFile();
 				for (WebElement webElement : ViewElemetData) {
 					highlightElement(dr, webElement);
 					String cellValue = webElement.getText();
 					if (cellValue.length() != 0) {
-						this.br.write(cellValue);
-						this.br.newLine();
+						br.write(cellValue);
+						br.newLine();
 						log.debug(cellValue); // Logger
 					} else if (waitforElementVisibile(alertLevelAttrib).isDisplayed()) {
 						String Val = waitforElementVisibile(alertLevelAttrib).getAttribute("title");
 						int result = Integer.parseInt(Val);
 						String value = alertCheck(result);
-						this.br.write(value);
-						this.br.newLine();
+						br.write(value);
+						br.newLine();
 						log.debug(value);
 					}
 				}
 				br.close();
 				log.info("Event data collected successfully in " + TestFile);
 			} else {
+				browserQuit();
 				log.info("Browser closed because of Lsize = " + Lsize);
 			}
 		} catch (Exception e) {

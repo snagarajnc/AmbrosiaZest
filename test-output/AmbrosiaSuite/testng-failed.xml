@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite verbose="2" name="Failed suite [AmbrosiaSuite]" parallel="true">
-  <parameter name="ReportName" value="Music on Hold Report"/>
-  <parameter name="browser" value="chrome"/>
-  <test name="AmbrosiaTest #1(failed)" parallel="true">
-    <parameter name="ReportName" value="Music on Hold Report"/>
+<suite verbose="2" name="Failed suite [AmbrosiaSuite]">
+  <test thread-count="5" verbose="2" name="----- Launch Browser and Login to Ambrosia Portal -----(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="AmbrosiaLaunchSite.LaunchAmbrosia">
+      <class name="com.abrosia.zest.testcases.TC002_EventNavigation">
         <methods>
+          <include name="collectEventDetails"/>
+          <include name="clickEvent"/>
+          <include name="initlog4j"/>
+          <include name="selectEventRandomly"/>
+        </methods>
+      </class> <!-- com.abrosia.zest.testcases.TC002_EventNavigation -->
+      <class name="com.abrosia.zest.testcases.TC001_LaunchAmbrosia">
+        <methods>
+          <include name="AmbrosiaLogin"/>
+          <include name="LoginValidation"/>
           <include name="BrowserSelection"/>
         </methods>
-      </class> <!-- AmbrosiaLaunchSite.LaunchAmbrosia -->
-      <class name="AmbrosiaEvents.EventsNavigation">
-        <methods>
-          <include name="ListPagination"/>
-          <include name="GetRecordDetails"/>
-          <include name="initlog4j"/>
-        </methods>
-      </class> <!-- AmbrosiaEvents.EventsNavigation -->
+      </class> <!-- com.abrosia.zest.testcases.TC001_LaunchAmbrosia -->
     </classes>
-  </test> <!-- AmbrosiaTest #1(failed) -->
+  </test> <!-- - Launch Browser and Login to Ambrosia Portal -(failed) -->
 </suite> <!-- Failed suite [AmbrosiaSuite] -->

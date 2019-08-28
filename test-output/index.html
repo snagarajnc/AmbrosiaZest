@@ -2,9 +2,10 @@
 
 <html>
   <head>
+  <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -101,22 +102,22 @@
                     <div class="method-list-content passed suite-AmbrosiaSuite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-AmbrosiaSuite" title="AmbrosiaLaunchSite.LaunchAmbrosia" hash-for-method="AmbrosiaLogin">AmbrosiaLogin</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-AmbrosiaSuite" title="com.abrosia.zest.testcases.TC001_LaunchAmbrosia" hash-for-method="AmbrosiaLogin">AmbrosiaLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-AmbrosiaSuite" title="AmbrosiaLaunchSite.LaunchAmbrosia" hash-for-method="LoginValidation">LoginValidation</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-AmbrosiaSuite" title="com.abrosia.zest.testcases.TC001_LaunchAmbrosia" hash-for-method="LoginValidation">LoginValidation</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-AmbrosiaSuite" title="AmbrosiaEvents.EventsNavigation" hash-for-method="clickEvent">clickEvent</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-AmbrosiaSuite" title="com.abrosia.zest.testcases.TC002_EventNavigation" hash-for-method="clickEvent">clickEvent</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-AmbrosiaSuite" title="AmbrosiaEvents.EventsNavigation" hash-for-method="selectEventRandomly">selectEventRandomly</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-AmbrosiaSuite" title="com.abrosia.zest.testcases.TC002_EventNavigation" hash-for-method="selectEventRandomly">selectEventRandomly</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-AmbrosiaSuite -->
@@ -134,29 +135,7 @@
           <div class="suite-AmbrosiaSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">AmbrosiaLaunchSite.LaunchAmbrosia</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="AmbrosiaLogin">
-                  </a> <!-- AmbrosiaLogin -->
-                  <span class="method-name">AmbrosiaLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="LoginValidation">
-                  </a> <!-- LoginValidation -->
-                  <span class="method-name">LoginValidation</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-AmbrosiaSuite-class-passed -->
-          <div class="suite-AmbrosiaSuite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">AmbrosiaEvents.EventsNavigation</span>
+              <span class="class-name">com.abrosia.zest.testcases.TC002_EventNavigation</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -175,6 +154,28 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-AmbrosiaSuite-class-passed -->
+          <div class="suite-AmbrosiaSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.abrosia.zest.testcases.TC001_LaunchAmbrosia</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AmbrosiaLogin">
+                  </a> <!-- AmbrosiaLogin -->
+                  <span class="method-name">AmbrosiaLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LoginValidation">
+                  </a> <!-- LoginValidation -->
+                  <span class="method-name">LoginValidation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AmbrosiaSuite-class-passed -->
         </div> <!-- panel AmbrosiaSuite -->
         <div panel-name="test-xml-AmbrosiaSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -184,15 +185,15 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite verbose=&quot;2&quot; name=&quot;AmbrosiaSuite&quot; parallel=&quot;true&quot;&gt;
-  &lt;test name=&quot;AmbrosiaTest #1&quot;&gt;
-    &lt;parameter name=&quot;ReportName&quot; value=&quot;Music on Hold Report&quot;/&gt;
+&lt;suite verbose=&quot;2&quot; name=&quot;AmbrosiaSuite&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;--------------- TestCase #1 --------------------&quot; group-by-instances=&quot;true&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;AmbrosiaLaunchSite.LaunchAmbrosia&quot;/&gt;
-      &lt;class name=&quot;AmbrosiaEvents.EventsNavigation&quot;/&gt;
+      &lt;class name=&quot;com.abrosia.zest.base.BaseTest&quot;/&gt;
+      &lt;class name=&quot;com.abrosia.zest.testcases.TC001_LaunchAmbrosia&quot;/&gt;
+      &lt;class name=&quot;com.abrosia.zest.testcases.TC002_EventNavigation&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- AmbrosiaTest #1 --&gt;
+  &lt;/test&gt; &lt;!-- - TestCase #1 - --&gt;
 &lt;/suite&gt; &lt;!-- AmbrosiaSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -204,7 +205,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">AmbrosiaTest #1 (2 classes)</span>
+                <span class="test-name">--------------- TestCase #1 -------------------- (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -232,26 +233,26 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'selectEventRandomly')
-data.setCell(0, 2, 'AmbrosiaEvents.EventsNavigation')
-data.setCell(0, 3, 8295);
+data.setCell(0, 1, 'AmbrosiaLogin')
+data.setCell(0, 2, 'com.abrosia.zest.testcases.TC001_LaunchAmbrosia')
+data.setCell(0, 3, 4568);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'clickEvent')
-data.setCell(1, 2, 'AmbrosiaEvents.EventsNavigation')
-data.setCell(1, 3, 6478);
+data.setCell(1, 1, 'selectEventRandomly')
+data.setCell(1, 2, 'com.abrosia.zest.testcases.TC002_EventNavigation')
+data.setCell(1, 3, 2251);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'AmbrosiaLogin')
-data.setCell(2, 2, 'AmbrosiaLaunchSite.LaunchAmbrosia')
-data.setCell(2, 3, 4476);
+data.setCell(2, 1, 'clickEvent')
+data.setCell(2, 2, 'com.abrosia.zest.testcases.TC002_EventNavigation')
+data.setCell(2, 3, 1683);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'LoginValidation')
-data.setCell(3, 2, 'AmbrosiaLaunchSite.LaunchAmbrosia')
-data.setCell(3, 3, 2323);
+data.setCell(3, 2, 'com.abrosia.zest.testcases.TC001_LaunchAmbrosia')
+data.setCell(3, 3, 41);
 window.suiteTableData['AmbrosiaSuite']= { tableData: data, tableDiv: 'times-div-AmbrosiaSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 21 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-AmbrosiaSuite">
               </div> <!-- times-div-AmbrosiaSuite -->
             </div> <!-- times-div -->
@@ -270,7 +271,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">AmbrosiaLaunchSite.LaunchAmbrosia</span>
+              <span class="ignored-class-name">com.abrosia.zest.testcases.TC001_LaunchAmbrosia</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">GrabbedAllTableData</span>
                 <br/>
@@ -286,41 +287,58 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">AmbrosiaEvents.EventsNavigation</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">initlog4j</span>
+              <div class="chronological-class-name">com.abrosia.zest.base.BaseTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeSuite</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.abrosia.zest.testcases.TC001_LaunchAmbrosia</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">BrowserSelection(chrome)</span>
+                <span class="method-start">44 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">AmbrosiaLaunchSite.LaunchAmbrosia</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.abrosia.zest.testcases.TC002_EventNavigation</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">BrowserSelection(chrome)</span>
-                <span class="method-start">37 ms</span>
+                <span class="method-name">initlog4j</span>
+                <span class="method-start">2948 ms</span>
               </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.abrosia.zest.testcases.TC001_LaunchAmbrosia</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">AmbrosiaLogin</span>
-                <span class="method-start">2926 ms</span>
+                <span class="method-start">2962 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">LoginValidation</span>
-                <span class="method-start">2926 ms</span>
+                <span class="method-start">7532 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">AmbrosiaEvents.EventsNavigation</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.abrosia.zest.testcases.TC002_EventNavigation</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">clickEvent</span>
-                <span class="method-start">2997 ms</span>
+                <span class="method-start">7576 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">selectEventRandomly</span>
-                <span class="method-start">3001 ms</span>
+                <span class="method-start">9260 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">collectEventDetails</span>
-                <span class="method-start">11301 ms</span>
+                <span class="method-start">11512 ms</span>
               </div> <!-- configuration-test after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.abrosia.zest.base.BaseTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">afterSuite</span>
+                <span class="method-start">12872 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

@@ -23,5 +23,16 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/Users/snagaraj/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6.jar" sourcepath="D:/Users/snagaraj/.m2/repository/commons-net/commons-net/3.6/commons-net-3.6-sources.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="commons-net"/>
+			<attribute name="maven.artifactId" value="commons-net"/>
+			<attribute name="maven.version" value="3.6"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
