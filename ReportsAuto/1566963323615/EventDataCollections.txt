@@ -1,0 +1,40 @@
+Description:
+Critical
+Event ID:
+DependencyTree
+Acknowledged:
+No
+Last Time (Text):
+08/28/19 08:30:17 AM (Wed) PDT
+Alert:
+Critical
+Last Time:
+00000001567006217466
+Checkpoint:
+11318642
+Last Time In:
+08/28/19 08:30:17 AM (Wed) PDT
+Counter:
+0
+Original Checkpoint:
+0
+Delayed:
+No
+Partition:
+00-50-56-BF-5C-F7-1557324682835
+Device Name:
+Nectar CUCM 2-IMP-SUB-nyisla-impre2.nectarcorp.com
+Source:
+00-50-56-BF-5C-F7-1557324682835
+Discarded:
+No
+Time (Text):
+08/28/19 08:30:17 AM (Wed) PDT
+Display Name:
+Nectar CUCM 2-IMP-SUB-nyisla-impre2.nectarcorp.com
+Time:
+00000001567006217466
+Event All ID:
+410298
+Time In:
+00000001567006217466

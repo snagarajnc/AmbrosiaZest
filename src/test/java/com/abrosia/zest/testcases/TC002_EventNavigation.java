@@ -58,7 +58,6 @@ public class TC002_EventNavigation extends POMFunction {
 	@AfterTest
 	public void collectEventDetails() throws ParseException {
 		try {
-//			createTxtFile();
 			WebElement ViewEventTable = FindElement(completeViewEvent);
 			List<WebElement> ViewElemetData = ViewEventTable.findElements(cellViewEvent);
 			int Lsize = ViewElemetData.size();
@@ -82,7 +81,6 @@ public class TC002_EventNavigation extends POMFunction {
 					}
 				}
 				br.close();
-				log.info("Event data collected successfully in " + TestFile);
 			} else {
 				browserQuit();
 				log.info("Browser closed because of Lsize = " + Lsize);

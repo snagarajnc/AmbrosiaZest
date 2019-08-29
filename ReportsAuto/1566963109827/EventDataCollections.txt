@@ -1,0 +1,40 @@
+Description:
+Critical
+Event ID:
+DependencyTree
+Acknowledged:
+No
+Last Time (Text):
+08/28/19 12:04:27 AM (Wed) PDT
+Alert:
+Critical
+Last Time:
+00000001566975867651
+Checkpoint:
+14768225
+Last Time In:
+08/28/19 12:04:27 AM (Wed) PDT
+Counter:
+0
+Original Checkpoint:
+0
+Delayed:
+No
+Partition:
+00-50-56-BF-26-85-1538128907209
+Device Name:
+Nectar CUCM-GW TXCISCO3900.nectarcorp.com
+Source:
+00-50-56-BF-26-85-1538128907209
+Discarded:
+No
+Time (Text):
+08/28/19 12:04:27 AM (Wed) PDT
+Display Name:
+Nectar CUCM-GW TXCISCO3900.nectarcorp.com
+Time:
+00000001566975867651
+Event All ID:
+116087
+Time In:
+00000001566975867651

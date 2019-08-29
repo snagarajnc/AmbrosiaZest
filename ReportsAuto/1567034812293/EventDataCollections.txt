@@ -1,0 +1,40 @@
+Description:
+Critical
+Event ID:
+DependencyTree
+Acknowledged:
+No
+Last Time (Text):
+08/29/19 04:15:17 AM (Thu) PDT
+Alert:
+Critical
+Last Time:
+00000001567077317543
+Checkpoint:
+11662372
+Last Time In:
+08/29/19 04:15:17 AM (Thu) PDT
+Counter:
+0
+Original Checkpoint:
+0
+Delayed:
+No
+Partition:
+00-50-56-BF-5C-F7-1557324682835
+Device Name:
+Nectar CUCM 2-CM-PUB-CM_nyisla-ciscm
+Source:
+00-50-56-BF-5C-F7-1557324682835
+Discarded:
+No
+Time (Text):
+08/29/19 04:15:17 AM (Thu) PDT
+Display Name:
+Nectar CUCM 2-CM-PUB-CM_nyisla-ciscm
+Time:
+00000001567077317543
+Event All ID:
+418257
+Time In:
+00000001567077317543
