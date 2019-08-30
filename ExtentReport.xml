@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="AmbrosiaSuite" parallel="false" verbose="2">
+
+	<test name="--------------- TestCase #1 --------------------"
+		group-by-instances="true" verbose="2">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.abrosia.zest.base.BaseTest" />
+			<class name="com.abrosia.zest.extent.reports.ExtentReportClass" />
+		</classes>
+	</test>
+</suite>

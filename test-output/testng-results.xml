@@ -1,13 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="6" passed="4">
+<testng-results skipped="0" failed="0" ignored="2" total="8" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="AmbrosiaSuite" duration-ms="15999" started-at="2019-08-29T11:26:52Z" finished-at="2019-08-29T11:27:08Z">
+  <suite name="AmbrosiaSuite" duration-ms="110740" started-at="2019-08-30T14:33:56Z" finished-at="2019-08-30T14:35:47Z">
     <groups>
     </groups>
-    <test name="--------------- TestCase #1 --------------------" duration-ms="15999" started-at="2019-08-29T11:26:52Z" finished-at="2019-08-29T11:27:08Z">
+    <test name="--------------- BaseTest --------------------" duration-ms="816" started-at="2019-08-30T14:33:56Z" finished-at="2019-08-30T14:33:57Z">
+      <class name="com.abrosia.zest.extent.reports.ExtentReportClass">
+        <test-method status="PASS" signature="Definition()[pri:0, instance:com.abrosia.zest.extent.reports.ExtentReportClass@2ac273d3]" name="Definition" is-config="true" duration-ms="156" started-at="2019-08-30T14:33:56Z" finished-at="2019-08-30T14:33:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Definition -->
+        <test-method status="PASS" signature="passTest()[pri:0, instance:com.abrosia.zest.extent.reports.ExtentReportClass@2ac273d3]" name="passTest" duration-ms="14" started-at="2019-08-30T14:33:56Z" finished-at="2019-08-30T14:33:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- passTest -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.abrosia.zest.extent.reports.ExtentReportClass@2ac273d3]" name="getResult" is-config="true" duration-ms="4" started-at="2019-08-30T14:33:56Z" finished-at="2019-08-30T14:33:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=passTest status=SUCCESS method=ExtentReportClass.passTest()[pri:0, instance:com.abrosia.zest.extent.reports.ExtentReportClass@2ac273d3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="skipTest()[pri:0, instance:com.abrosia.zest.extent.reports.ExtentReportClass@2ac273d3]" name="skipTest" duration-ms="1" started-at="2019-08-30T14:33:56Z" finished-at="2019-08-30T14:33:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- skipTest -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.abrosia.zest.extent.reports.ExtentReportClass@2ac273d3]" name="getResult" is-config="true" duration-ms="0" started-at="2019-08-30T14:33:56Z" finished-at="2019-08-30T14:33:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=skipTest status=SUCCESS method=ExtentReportClass.skipTest()[pri:0, instance:com.abrosia.zest.extent.reports.ExtentReportClass@2ac273d3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.abrosia.zest.extent.reports.ExtentReportClass@2ac273d3]" name="endReport" is-config="true" duration-ms="612" started-at="2019-08-30T14:33:56Z" finished-at="2019-08-30T14:33:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- com.abrosia.zest.extent.reports.ExtentReportClass -->
+    </test> <!-- - BaseTest - -->
+    <test name="--------------- TestCase #1 --------------------" duration-ms="109885" started-at="2019-08-30T14:33:57Z" finished-at="2019-08-30T14:35:47Z">
       <class name="com.abrosia.zest.testcases.TC001_LaunchAmbrosia">
-        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:com.abrosia.zest.testcases.TC001_LaunchAmbrosia@71423665]" name="BrowserSelection" is-config="true" duration-ms="4414" started-at="2019-08-29T11:26:52Z" finished-at="2019-08-29T11:26:56Z">
+        <test-method status="PASS" signature="BrowserSelection(java.lang.String)[pri:0, instance:com.abrosia.zest.testcases.TC001_LaunchAmbrosia@61f8bee4]" name="BrowserSelection" is-config="true" duration-ms="4307" started-at="2019-08-30T14:33:57Z" finished-at="2019-08-30T14:34:01Z">
           <params>
             <param index="0">
               <value>
@@ -18,39 +60,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserSelection -->
-        <test-method status="PASS" signature="initlog4j()[pri:0, instance:com.abrosia.zest.testcases.TC002_EventNavigation@20398b7c]" name="initlog4j" is-config="true" duration-ms="2" started-at="2019-08-29T11:26:56Z" finished-at="2019-08-29T11:26:56Z">
+        <test-method status="PASS" signature="initlog4j()[pri:0, instance:com.abrosia.zest.testcases.TC002_EventNavigation@7b49cea0]" name="initlog4j" is-config="true" duration-ms="5" started-at="2019-08-30T14:34:01Z" finished-at="2019-08-30T14:34:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initlog4j -->
-        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:com.abrosia.zest.testcases.TC001_LaunchAmbrosia@71423665]" name="AmbrosiaLogin" duration-ms="6322" started-at="2019-08-29T11:26:56Z" finished-at="2019-08-29T11:27:03Z">
+        <test-method status="PASS" signature="AmbrosiaLogin()[pri:0, instance:com.abrosia.zest.testcases.TC001_LaunchAmbrosia@61f8bee4]" name="AmbrosiaLogin" duration-ms="34680" started-at="2019-08-30T14:34:01Z" finished-at="2019-08-30T14:34:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AmbrosiaLogin -->
-        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:com.abrosia.zest.testcases.TC001_LaunchAmbrosia@71423665]" name="LoginValidation" duration-ms="11" started-at="2019-08-29T11:27:03Z" finished-at="2019-08-29T11:27:03Z">
+        <test-method status="PASS" signature="LoginValidation()[pri:0, instance:com.abrosia.zest.testcases.TC001_LaunchAmbrosia@61f8bee4]" name="LoginValidation" duration-ms="120" started-at="2019-08-30T14:34:36Z" finished-at="2019-08-30T14:34:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginValidation -->
       </class> <!-- com.abrosia.zest.testcases.TC001_LaunchAmbrosia -->
       <class name="com.abrosia.zest.testcases.TC002_EventNavigation">
-        <test-method status="PASS" signature="clickEvent()[pri:0, instance:com.abrosia.zest.testcases.TC002_EventNavigation@20398b7c]" name="clickEvent" duration-ms="2136" started-at="2019-08-29T11:27:03Z" finished-at="2019-08-29T11:27:05Z">
+        <test-method status="PASS" signature="clickEvent()[pri:0, instance:com.abrosia.zest.testcases.TC002_EventNavigation@7b49cea0]" name="clickEvent" duration-ms="4742" started-at="2019-08-30T14:34:36Z" finished-at="2019-08-30T14:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickEvent -->
-        <test-method status="PASS" signature="selectEventRandomly()[pri:0, instance:com.abrosia.zest.testcases.TC002_EventNavigation@20398b7c]" name="selectEventRandomly" duration-ms="1783" started-at="2019-08-29T11:27:05Z" finished-at="2019-08-29T11:27:07Z">
+        <test-method status="PASS" signature="selectEventRandomly()[pri:0, instance:com.abrosia.zest.testcases.TC002_EventNavigation@7b49cea0]" name="selectEventRandomly" duration-ms="6430" started-at="2019-08-30T14:34:41Z" finished-at="2019-08-30T14:34:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectEventRandomly -->
-        <test-method status="PASS" signature="collectEventDetails()[pri:0, instance:com.abrosia.zest.testcases.TC002_EventNavigation@20398b7c]" name="collectEventDetails" is-config="true" duration-ms="1305" started-at="2019-08-29T11:27:07Z" finished-at="2019-08-29T11:27:08Z">
+        <test-method status="PASS" signature="collectEventDetails()[pri:0, instance:com.abrosia.zest.testcases.TC002_EventNavigation@7b49cea0]" name="collectEventDetails" is-config="true" duration-ms="59554" started-at="2019-08-30T14:34:47Z" finished-at="2019-08-30T14:35:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- collectEventDetails -->
       </class> <!-- com.abrosia.zest.testcases.TC002_EventNavigation -->
       <class name="com.abrosia.zest.base.BaseTest">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.abrosia.zest.base.BaseTest@2ac273d3]" name="beforeSuite" is-config="true" duration-ms="96" started-at="2019-08-29T11:26:52Z" finished-at="2019-08-29T11:26:52Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.abrosia.zest.base.BaseTest@5383967b]" name="beforeSuite" is-config="true" duration-ms="66" started-at="2019-08-30T14:33:56Z" finished-at="2019-08-30T14:33:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.abrosia.zest.base.BaseTest@2ac273d3]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-08-29T11:27:08Z" finished-at="2019-08-29T11:27:08Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.abrosia.zest.base.BaseTest@5383967b]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-08-30T14:35:47Z" finished-at="2019-08-30T14:35:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

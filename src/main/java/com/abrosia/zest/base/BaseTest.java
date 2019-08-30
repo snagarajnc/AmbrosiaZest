@@ -17,9 +17,9 @@ public class BaseTest extends AmbrosiaUtils {
 	@BeforeSuite
 	public void beforeSuite() throws ParseException, IOException {
 		POMFunction.Loadlog4j();
-		System.out.println("currentRunReportPath : " + AmbrosiaUtils.CurrentReportLocation());
 		file = new File(AmbrosiaUtils.CurrentReportLocation() + "\\Screenshots");
 		file.mkdirs();
+		
 	}
 
 	@AfterSuite

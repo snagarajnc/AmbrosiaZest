@@ -20,6 +20,7 @@ public class AmbrosiaUtils extends POMFunction {
 
 	public static String CurrentReportLocation() throws ParseException {
 		String CurrentReportLocation = CreateReportFolder(TimeGen());
+		POMFunction.Error("AutoReportPath : "+CurrentReportLocation);
 		return CurrentReportLocation;
 	}
 

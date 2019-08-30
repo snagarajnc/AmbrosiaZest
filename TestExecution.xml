@@ -2,11 +2,16 @@
 
 <suite name="AmbrosiaSuite" parallel="false" verbose="2">
 
+	<test name="--------------- BaseTest --------------------">
+		<classes>
+			<class name="com.abrosia.zest.base.BaseTest" />
+			<class name="com.abrosia.zest.extent.reports.ExtentReportClass" />
+		</classes>
+	</test>
 	<test name="--------------- TestCase #1 --------------------"
 		group-by-instances="true" verbose="2">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.abrosia.zest.base.BaseTest" />
 			<class name="com.abrosia.zest.testcases.TC001_LaunchAmbrosia" />
 			<class name="com.abrosia.zest.testcases.TC002_EventNavigation" />
 		</classes>
