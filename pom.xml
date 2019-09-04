@@ -10,6 +10,8 @@
 		<selenium.jar.version>3.14.0</selenium.jar.version>
 		<java.source.version>1.8</java.source.version>
 		<java.target.version>1.8</java.target.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<mvn.complier.version>3.8.0</mvn.complier.version>
 		<mvn.surefire.version>3.0.0-M3</mvn.surefire.version>
 		<testng.verison>6.8</testng.verison>

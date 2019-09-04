@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.abrosia.zest.testcases.TC002_EventNavigation">
+      <class name="com.abrosia.zest.extent.reports.ExtentReportClass">
         <methods>
-          <include name="collectEventDetails"/>
-          <include name="clickEvent"/>
-          <include name="initlog4j"/>
-          <include name="selectEventRandomly"/>
+          <include name="Definition"/>
+          <include name="failTest"/>
+          <include name="endReport"/>
+          <include name="getResult"/>
         </methods>
-      </class> <!-- com.abrosia.zest.testcases.TC002_EventNavigation -->
+      </class> <!-- com.abrosia.zest.extent.reports.ExtentReportClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
